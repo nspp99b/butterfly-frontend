@@ -1,5 +1,9 @@
 /* app wrapper, structure */
 
+body {
+  background-image: url("butterfly_logo_trans_50.png");
+}
+
 .app-wrapper {
   display: grid;
   grid-gap: 20px;
@@ -39,7 +43,7 @@
   float: right;
   margin: 0;
   overflow:hidden;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .nav-bar ul {
@@ -63,11 +67,11 @@
 .nav-bar li a {
   float: right;
   display: block;
-  line-height: 2em;
+  /* line-height: 2em; */
   list-style-type: none;
   margin: 4px;
   color: white;
-  font-size: 1.5em;
+  font-size: 1em;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -88,16 +92,16 @@
   float: left;
   letter-spacing: -2px;
   font-family: 'Kaushan Script', cursive;
-  font-size: 36px;
+  font-size: 32px;
 }
 
 .nav-bar-logout {
   list-style-type: none;
-  line-height: 2em;
+  /* line-height: 2em; */
   display: block;
   margin: 4px;
   color: white;
-  font-size: 1.5em;
+  font-size: 1em;
   font-family: 'Roboto', sans-serif;
 }
 
