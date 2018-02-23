@@ -2,8 +2,8 @@ import React from 'react'
 
 const UserContainer = () => {
   return (
-    <div>User Container
-    </div>
+    <aside className="user-container">User Container
+    </aside>
   )
 }
 

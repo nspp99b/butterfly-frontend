@@ -2,8 +2,8 @@ import React from 'react'
 
 const FlapsContainer = () => {
   return (
-    <div>Flaps Container
-    </div>
+    <article className="flaps-container">Flaps Container
+    </article>
   )
 }
 

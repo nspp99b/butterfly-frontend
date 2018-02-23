@@ -1,8 +1,12 @@
 import React from 'react'
+import UserContainer from './UserContainer'
+import FlapsContainer from './FlapsContainer'
 
 const MainContainer = () => {
   return (
-    <div className="wrapper">Main Container
+    <div className="main-wrapper">
+      <UserContainer />
+      <FlapsContainer />
     </div>
   )
 }

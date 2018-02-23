@@ -49,7 +49,7 @@ class App extends Component {
   
   render() {
     return (
-      <div>
+      <div className="app-wrapper">
         <NavBar currentUser={this.state.auth.currentUser} logOut={this.removeLoggedInUser}/>
         <Route exact path='/login' render={(routerProps) => {
           return <Login history={routerProps.history} setUser={this.setLoggedInUser} />

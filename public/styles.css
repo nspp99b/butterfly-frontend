@@ -1,34 +1,32 @@
-/* site wrapper, structure */
+/* app wrapper, structure */
 
-.wrapper {
+.app-wrapper {
   display: grid;
   grid-gap: 20px;
   grid-template-areas:
     "nav-bar"
-    "user-container"
-    "flap-container"
+    "main-container"
 }
 
 @media (min-width: 500px) {
-  .wrapper {
+  .app-wrapper {
     grid-template-columns: 1fr 2fr;
     grid-template-areas:
 
-      "nav-bar  nav-bar"
-      "user-container flap-container"
+      "nav-bar        nav-bar"
+      "main-container main-container"
   }
 }
 
 /* NavBar component */
 
 .nav-bar {
-  margin: auto;
   height: auto;
   grid-area: nav-bar;
   overflow: hidden;
   color: white;
   background: orangered;
-  background: linear-gradient(to bottom right, orangered, yellow);
+  background: linear-gradient(to bottom right, orangered, orange);
 }
 
 .logo-img {
@@ -49,7 +47,13 @@
   padding: 0;
 }
 
+.nav-bar h2 {
+  margin: 0;
+  padding: 0;
+}
+
 .nav-bar li {
+  float: right;
   display: inline-block;
   list-style-type: none;
   margin: 4px;
@@ -57,6 +61,7 @@
 }
 
 .nav-bar li a {
+  float: right;
   display: block;
   line-height: 2em;
   list-style-type: none;
@@ -74,6 +79,7 @@
 }
 
 .nav-bar a {
+  float: right;
   text-decoration: none;
   color: white;
 }
@@ -152,14 +158,44 @@
 
 }
 
+/* main container structure */
+
+.main-wrapper {
+  grid-area: main-container;
+  display: grid;
+  grid-gap: 20px;
+  /* grid-template-columns: 1fr 2fr; */
+  grid-template-areas:
+
+    "user-container"
+    "flaps-container"
+}
+
+ @media (min-width: 500px) {
+  .main-wrapper {
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+
+      "user-container flaps-container"
+      "user-container flaps-container"
+  }
+}
+
 /* UserContainer */
 
 .user-container {
-  height: 60vh;
   grid-area: user-container;
   border: 5px solid orangered;
   border-radius: 10px;
   font-family: 'Roboto', sans-serif;
-  color: black;
-  overflow-y: auto;
+  /* overflow-y: auto; */
+}
+
+/* flaps container */
+
+.flaps-container {
+  grid-area: flaps-container;
+  border: 5px solid orangered;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
 }
