@@ -47,7 +47,7 @@
   padding: 0;
 }
 
-.nav-bar h2 {
+.nav-bar h4 {
   margin: 0;
   padding: 0;
 }
@@ -114,20 +114,21 @@
 /* Login and Signup Components */
 
 .user-form {
-  margin: 20px 20%;
+  grid-area: main-container;
+  margin: auto;
   padding: 10px;
   text-align: center;
-  border: 5px solid orangered;
+  border: 1px solid orangered;
   border-radius: 10px;
   font-family: 'Roboto', sans-serif;
-  font-size: 1em;
+  font-size: 10pt;
   color: black;
 }
 
 .submit-button {
   font-family: 'Roboto', sans-serif;
-  font-size: x-large;
-  border: 2px solid;
+  font-size: 10pt;
+  border: 1px solid;
   border-color: black;
   border-radius: 5px;
   background-color: orangered;
@@ -164,7 +165,6 @@
   grid-area: main-container;
   display: grid;
   grid-gap: 20px;
-  /* grid-template-columns: 1fr 2fr; */
   grid-template-areas:
 
     "user-container"
@@ -185,7 +185,7 @@
 
 .user-container {
   grid-area: user-container;
-  border: 5px solid orangered;
+  border: 1px solid orangered;
   border-radius: 10px;
   font-family: 'Roboto', sans-serif;
   /* overflow-y: auto; */
@@ -195,7 +195,7 @@
 
 .flaps-container {
   grid-area: flaps-container;
-  border: 5px solid orangered;
+  border: 1px solid orangered;
   border-radius: 10px;
   font-family: 'Roboto', sans-serif;
 }
