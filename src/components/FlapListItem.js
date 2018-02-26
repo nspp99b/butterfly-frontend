@@ -1,7 +1,5 @@
 import React from 'react'
 import FlapListEffects from './FlapListEffects'
-// import { connect } from 'react-redux';
-// import * as actions from '../actions';
 
 const FlapListItem = (props) => {
   console.log('FlapListItem rendered')
