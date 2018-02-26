@@ -1,17 +1,19 @@
 import React from 'react'
-import FlapList from './FlapList'
-import { connect } from 'react-redux';
-import * as actions from '../actions';
+import FlapListEffects from './FlapListEffects'
+// import { connect } from 'react-redux';
+// import * as actions from '../actions';
 
 const FlapListItem = (props) => {
+  console.log('FlapListItem rendered')
+  console.log(props)
   return (
     <div>
       <div>Flap Username / User Image</div>
       <div>{props.flap.content}</div>
-      <div onClick={props.showEffects}>FX: {props.flap.fx_count}</div>
-      { props.flap.showFlapEffects == true && < FlapList flaps={props.flap.effects}/> }
+      <div onClick={() => props.showEffects(props.flap.id)}>FX: {props.flap.fx_count}</div>
+      { props.flap.showFlapEffects == true && < FlapListEffects effects={props.flap.effects}/> }
     </div>
   )
 }
 
-export default connect(null, actions)(FlapListItem)
+export default FlapListItem

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 const FlapList = (props) => {
-  // debugger
+  console.log('FlapList rendered')
   const flapsArray = props.flaps.map(f => <FlapListItem key={f.id} flap={f} showEffects={props.showEffects}/>)
 
   return (

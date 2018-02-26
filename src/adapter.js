@@ -1,3 +1,5 @@
+//constants
+
 const headers = () => {
   return {'Content-Type': 'application/json',
   Accepts: 'application/json',
@@ -10,7 +12,9 @@ const signup_headers = {
 }
 
 const URL_ROOT = 'http://localhost:3001'
-// const API_ROOT = `${URL_ROOT}/api/v1`
+const API_ROOT = `${URL_ROOT}/api/v1`
+
+//auth fetches
 
 const signup = (signupBody) => {
   return fetch(`${URL_ROOT}/signup`, {
@@ -41,10 +45,21 @@ const getLoggedInUser = () => {
 //   }).then(res => res.json());
 // }
 
+//flaps
+
+const getFlaps = () => {
+  return fetch(`${API_ROOT}/flaps`, {
+    headers: headers()
+  }).then(res => res.json());
+}
+
 export default {
   auth: {
     signup,
     login,
     getLoggedInUser
+  },
+  flaps: {
+    getFlaps
   }
 }
