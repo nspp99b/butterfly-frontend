@@ -1,6 +1,3 @@
-export function showEffects(flapId) {
-  return {
-    type: 'SHOW_EFFECTS',
-    flapId
-  }
-}
+export { fetchFlaps } from './fetchFlaps';
+export { showEffects } from './showEffects';
+

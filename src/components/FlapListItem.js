@@ -11,7 +11,7 @@ const FlapListItem = (props) => {
       <div>Flap Username / User Image</div>
       <div>{props.flap.content}</div>
       <div onClick={() => props.showEffects(props.flap.id)}>FX: {props.flap.fx_count}</div>
-      { props.flap.showFlapEffects == true && < FlapListEffects effects={props.flap.effects}/> }
+      { props.flap.showFlapEffects === true && < FlapListEffects effects={props.flap.effects}/> }
     </div>
   )
 }

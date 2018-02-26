@@ -1,7 +1,5 @@
 import React from 'react';
 import FlapListItem from './FlapListItem';
-import { connect } from 'react-redux';
-import * as actions from '../actions';
 
 const FlapList = (props) => {
   console.log('FlapList rendered')
@@ -15,8 +13,4 @@ const FlapList = (props) => {
   
 }
 
-const mapStateToProps = (state) => {
-  return {flaps: state.flaps}
-}
-
-export default connect(mapStateToProps, actions)(FlapList)
+export default FlapList

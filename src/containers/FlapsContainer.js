@@ -1,12 +1,26 @@
-import React from 'react'
-import FlapList from '../components/FlapList'
+import React from 'react';
+import FlapList from '../components/FlapList';
+import { connect } from 'react-redux';
+import * as actions from '../actions/'
 
-const FlapsContainer = () => {
-  return (
-    <article className="flaps-container">Flaps Container
-      <FlapList /> 
-    </article>
-  )
+class FlapsContainer extends React.Component {
+  
+  componentDidMount() {
+    this.props.fetchFlaps()
+  }
+  
+  render() {  
+    return (
+      <article className="flaps-container">
+        <FlapList flaps={this.props.flaps} showEffects={this.props.showEffects}/> 
+      </article>
+    )    
+  }
+
 }
 
-export default FlapsContainer
+const mapStateToProps = (state) => {
+  return {flaps: state.flapsReducer.flaps}
+}
+
+export default connect(mapStateToProps, actions)(FlapsContainer)
