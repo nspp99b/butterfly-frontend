@@ -59,6 +59,14 @@ const getFlap = (fid) => {
   }).then(res => res.json());
 }
 
+const postFlap = (content, user_id) => {
+  return fetch(`${API_ROOT}/flaps`, {
+    method: 'POST',
+    headers: headers(),
+    body: JSON.stringify({ content, user_id })
+  }).then(res => res.json());
+}
+
 export default {
   auth: {
     signup,
@@ -67,6 +75,7 @@ export default {
   },
   flaps: {
     getFlaps,
-    getFlap
+    getFlap,
+    postFlap
   }
 }

@@ -1,4 +1,6 @@
 import React from 'react';
+import { addFlap } from '../actions/addFlap';
+import { connect } from 'react-redux';
 
 class FlapCreate extends React.Component {
   
@@ -9,14 +11,8 @@ class FlapCreate extends React.Component {
 
   handleFlapCreate = (e) => {
     e.preventDefault()
-    // adapter.auth.signup(this.state).then(res => {
-    //   if (res.error) {
-    //     alert(res.error)
-    //   } else {
-    //     this.props.history.push('/')
-    //     this.props.setUser(res)
-    //   }
-    // })
+    this.props.addFlap(this.state.content, this.state.user_id)
+    
   }
 
   onInputChange = (e) => {
@@ -35,4 +31,4 @@ class FlapCreate extends React.Component {
   }
 }
 
-export default FlapCreate
+export default connect(null, { addFlap })(FlapCreate)
