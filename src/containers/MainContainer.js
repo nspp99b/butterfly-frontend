@@ -8,7 +8,7 @@ const MainContainer = (props) => {
     <div className="main-wrapper">
       <FlapCreate user={props.user}/>
       <UserContainer user={props.user}/>
-      <FlapsContainer />
+      <FlapsContainer user={props.user}/>
     </div>
   )
 }
