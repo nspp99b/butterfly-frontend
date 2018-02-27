@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';	
 
 export const rootReducer = combineReducers({	
-  flapsReducer
+  flapsReducer,
+  flapReducer
 });	
 
-function flapsReducer(state = {flaps: []}, action) {	
+function flapsReducer(state = { flaps: [] }, action) {	
   switch (action.type) {	
  	
     case 'SHOW_EFFECTS':	
@@ -20,3 +21,13 @@ function flapsReducer(state = {flaps: []}, action) {
       return state;	
   }	
 }	
+
+function flapReducer(state = {}, action) {
+  switch (action.type) {
+    
+    case 'FETCH_FLAP':
+      return action.payload
+    default:
+      return state;
+  }
+}

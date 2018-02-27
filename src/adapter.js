@@ -53,6 +53,12 @@ const getFlaps = () => {
   }).then(res => res.json());
 }
 
+const getFlap = (fid) => {
+  return fetch(`${API_ROOT}/flaps/${fid}`, {
+    headers: headers()
+  }).then(res => res.json());
+}
+
 export default {
   auth: {
     signup,
@@ -60,6 +66,7 @@ export default {
     getLoggedInUser
   },
   flaps: {
-    getFlaps
+    getFlaps,
+    getFlap
   }
 }
