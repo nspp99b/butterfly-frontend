@@ -195,6 +195,18 @@ body {
   /* overflow-y: auto; */
 }
 
+.userItem {
+  margin: 10px 15px 15px 10px;
+  padding: 10px 15px 15px 10px;
+  background: white;
+  background: linear-gradient(to bottom right, white, floralwhite);
+  border-radius: 10px;
+}
+
+.userItem {
+  font-family: 'Permanent Marker', cursive;
+}
+
 /* flaps container */
 
 .flaps-container {
@@ -202,4 +214,21 @@ body {
   border: 1px solid orangered;
   border-radius: 10px;
   font-family: 'Roboto', sans-serif;
+}
+
+.flapItem {
+  margin: 10px 15px 15px 10px;
+  padding: 10px 15px 15px 10px;
+  background: white;
+  background: linear-gradient(to bottom right, white, floralwhite);
+  border-radius: 10px;
+}
+
+.flapItem-user {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.flapItem-fx:hover {
+  cursor: pointer;
+  color: orangered;
 }
