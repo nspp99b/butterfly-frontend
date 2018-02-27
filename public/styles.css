@@ -170,7 +170,7 @@ body {
   display: grid;
   grid-gap: 20px;
   grid-template-areas:
-
+    "flap-create"
     "user-container"
     "flaps-container"
 }
@@ -179,10 +179,46 @@ body {
   .main-wrapper {
     grid-template-columns: 1fr 2fr;
     grid-template-areas:
-
+      "flap-create    flap-create"
       "user-container flaps-container"
       "user-container flaps-container"
   }
+}
+
+/* Flap-Create */
+
+.flap-create {
+  grid-area: flap-create;
+  border: 1px solid orangered;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.flap-create-textarea {
+  margin: 10px 10px 10px 10px;
+  /* padding: 5px 5px 5px 5px; */
+  display: inline-block;
+  vertical-align: middle;
+  height: 70%;
+  width: 70%;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.flap-create-submit-button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 10pt;
+  border: 1px solid;
+  border-color: black;
+  border-radius: 5px;
+  background-color: orangered;
+  color: white;
+}
+
+.flap-create-submit-button:hover {
+  background-color: white;
+  color: black;
 }
 
 /* UserContainer */
