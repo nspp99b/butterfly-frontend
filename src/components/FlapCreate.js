@@ -12,7 +12,9 @@ class FlapCreate extends React.Component {
   handleFlapCreate = (e) => {
     e.preventDefault()
     this.props.addFlap(this.state.content, this.state.user_id)
-    
+    this.setState({
+      content: ''
+    })
   }
 
   onInputChange = (e) => {

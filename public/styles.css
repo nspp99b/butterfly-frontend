@@ -197,13 +197,13 @@ body {
 
 .flap-create-textarea {
   margin: 10px 10px 10px 10px;
-  /* padding: 5px 5px 5px 5px; */
   display: inline-block;
   vertical-align: middle;
   height: 60%;
   width: 60%;
   border-radius: 10px;
-  border: 1px solid black;
+  border: 1px solid orange;
+  font-size: 14px;
 }
 
 .flap-create-submit-button {
