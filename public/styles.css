@@ -263,6 +263,10 @@ body {
   border: 1px solid orange;
 }
 
+.flapItem-img:hover {
+  cursor: pointer;
+}
+
 .flapItem-user {
   font-family: 'Permanent Marker', cursive;
 }
