@@ -17,8 +17,9 @@ class App extends Component {
     this.setState({
       auth: {
         currentUser: {
+          id: user.id,
           email: user.email,
-          id: user.id
+          name: user.name
         }
       }
     })

@@ -14,8 +14,8 @@ class Login extends React.Component {
       if (res.error) {
         alert(res.error)
       } else {
-        this.props.history.push("/")
         this.props.setUser(res)
+        this.props.history.push("/")
       }
     })
   }
