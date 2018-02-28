@@ -263,6 +263,18 @@ body {
   border: 1px solid orange;
 }
 
+.flapItem-delete {
+  padding-left: 5px;
+  padding-right: 5px;
+  float: right;
+  color: orange;
+}
+
+.flapItem-delete:hover {
+  cursor: pointer;
+  color: orangered;
+}
+
 .flapItem-img:hover {
   cursor: pointer;
 }

@@ -24,7 +24,8 @@ class FlapItem extends React.Component {
   render() {
     return (
       <div className="flapItem">
-        <div className="flapItem-user">{this.props.flap.user.name}</div>
+        <span className="flapItem-user">{this.props.flap.user.name}</span>
+        <span className="flapItem-delete">x</span>
         <div>{this.props.flap.content}</div>
         <div>
           <img className="flapItem-img" src={this.state.imageSrc} alt="create effect" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={this.handleFlapCreate}>
