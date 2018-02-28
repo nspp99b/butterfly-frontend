@@ -25,13 +25,15 @@ class FlapItem extends React.Component {
     return (
       <div className="flapItem">
         <span className="flapItem-user">{this.props.flap.user.name}</span>
-        <span className="flapItem-delete">x</span>
+        { this.props.flap.user.id === this.props.user.id && 
+        <span className="flapItem-delete" onClick={() => this.props.updateFlap(this.props.flap.id)}>x</span> }
         <div>{this.props.flap.content}</div>
+        { this.props.flap.user.name !== "--" &&
         <div>
           <img className="flapItem-img" src={this.state.imageSrc} alt="create effect" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={this.handleFlapCreate}>
           </img>
           { this.state.showFlapCreate === true && < FlapCreate user={this.props.user} parent={this.props.flap.id}/> }
-        </div>
+        </div> }
         <div className="flapItem-fx" onClick={() => this.props.showEffects(this.props.flap.id)}>FX: {this.props.flap.fx_count}</div>
         
         { this.props.flap.showFlapEffects === true && < FlapList flaps={this.props.flap.effects} showEffects={this.props.showEffects} user={this.props.user}/> }

@@ -16,7 +16,10 @@ function flapsReducer(state = { flaps: [] }, action) {
       
     case 'FETCH_FLAPS':
  	    return { flaps: action.payload }
-
+    
+    case 'UPDATE_FLAP':
+      return { flaps: action.payload }
+      
     default:	
       return state;	
   }	

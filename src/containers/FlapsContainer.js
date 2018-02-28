@@ -12,7 +12,7 @@ class FlapsContainer extends React.Component {
   render() {  
     return (
       <article className="flaps-container">
-        <FlapList flaps={this.props.flaps} showEffects={this.props.showEffects} user={this.props.user}/> 
+        <FlapList flaps={this.props.flaps} showEffects={this.props.showEffects} user={this.props.user} updateFlap={this.props.updateFlap}/> 
       </article>
     )    
   }
