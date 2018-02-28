@@ -5,13 +5,12 @@ import { connect } from 'react-redux';
 class FlapCreate extends React.Component {
   
   state = {
-    content: '',
-    user_id: this.props.user.id,
+    content: ''
   }
 
   handleFlapCreate = (e) => {
     e.preventDefault()
-    this.props.addFlap(this.state.content, this.state.user_id)
+    this.props.addFlap(this.state.content, this.props.user.id, this.props.parent)
     this.setState({
       content: ''
     })

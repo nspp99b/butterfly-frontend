@@ -6,7 +6,7 @@ import FlapCreate from '../components/FlapCreate'
 const MainContainer = (props) => {
   return (
     <div className="main-wrapper">
-      <FlapCreate user={props.user}/>
+      <FlapCreate user={props.user} parent={props.parent}/>
       <UserContainer user={props.user}/>
       <FlapsContainer user={props.user}/>
     </div>

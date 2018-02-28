@@ -59,11 +59,11 @@ const getFlap = (fid) => {
   }).then(res => res.json());
 }
 
-const postFlap = (content, user_id) => {
+const postFlap = (content, user_id, parent) => {
   return fetch(`${API_ROOT}/flaps`, {
     method: 'POST',
     headers: headers(),
-    body: JSON.stringify({ content, user_id })
+    body: JSON.stringify({ content, user_id, parent })
   }).then(res => res.json());
 }
 

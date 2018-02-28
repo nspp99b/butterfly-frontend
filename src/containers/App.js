@@ -59,7 +59,7 @@ class App extends Component {
         <Route exact path='/signup' render={(routerProps) => {
           return <Signup history={routerProps.history} setUser={this.setLoggedInUser} />
         }} />
-        { this.state.auth.currentUser != null && <MainContainer user={this.state.auth.currentUser}/> }
+        { this.state.auth.currentUser != null && <MainContainer user={this.state.auth.currentUser} parent={null}/> }
       </div>
     );
   }

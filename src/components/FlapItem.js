@@ -29,7 +29,7 @@ class FlapItem extends React.Component {
         <div>
           <img className="flapItem-img" src={this.state.imageSrc} alt="create effect" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={this.handleFlapCreate}>
           </img>
-          { this.state.showFlapCreate === true && < FlapCreate user={this.props.user}/> }
+          { this.state.showFlapCreate === true && < FlapCreate user={this.props.user} parent={this.props.flap.id}/> }
         </div>
         <div className="flapItem-fx" onClick={() => this.props.showEffects(this.props.flap.id)}>FX: {this.props.flap.fx_count}</div>
         
