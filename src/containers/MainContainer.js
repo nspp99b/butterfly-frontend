@@ -21,7 +21,10 @@ class MainContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { currentUser: state.usersReducer.currentUser }
+  return { 
+    currentUser: state.usersReducer.currentUser,
+    isLoggedIn: state.usersReducer.isLoggedIn
+  }
 }
 
 export default connect(mapStateToProps, {getCurrentUser})(MainContainer)

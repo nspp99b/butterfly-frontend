@@ -13,7 +13,6 @@ class Signup extends React.Component {
   handleSignup = (e) => {
     e.preventDefault()
     this.props.signupUser(this.state)
-    this.props.history.push('/main')
   }
 
   onInputChange = (e) => {

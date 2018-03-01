@@ -26,9 +26,11 @@ class App extends React.Component {
     return (
       <div className="app-wrapper">
         <NavBar currentUser={this.props.currentUser} logout={this.props.logoutUser}/>
+        
         <Route exact path="/login" render={() => (this.props.isLoggedIn ? (<Redirect to="/main"/>) : (<Login/>))}/>
-        <Route exact path='/signup' component={Signup}/>
+        <Route exact path="/signup" render={() => (this.props.isLoggedIn ? (<Redirect to="/main"/>) : (<Signup/>))}/>
         <Route exact path="/main" render={() => (this.props.isLoggedIn ? (<MainContainer/>) : (<Redirect to="/login"/>))}/>
+        
       </div>
     );
   }
