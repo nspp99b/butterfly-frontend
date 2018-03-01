@@ -43,7 +43,6 @@ body {
   float: right;
   margin: 0;
   overflow:hidden;
-  /* text-align: center; */
 }
 
 .nav-bar ul {
@@ -54,6 +53,13 @@ body {
 .nav-bar h4 {
   margin: 0;
   padding: 0;
+}
+
+.nav-bar-title {
+  float: left;
+  letter-spacing: -2px;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 32px;
 }
 
 .nav-bar li {
@@ -79,7 +85,7 @@ body {
   display: inline-block;
   text-decoration: none;
   list-style-type: none;
-  margin: 4px;
+  margin: 0px;
   color: white;
   font-size: 1em;
   font-family: 'Roboto', sans-serif;
@@ -87,16 +93,9 @@ body {
 
 .nav-bar li a:hover {
   list-style-type: none;
-  margin: 4px;
+  margin: 0px;
   color: black;
   font-family: 'Roboto', sans-serif;
-}
-
-.nav-bar-title {
-  float: left;
-  letter-spacing: -2px;
-  font-family: 'Kaushan Script', cursive;
-  font-size: 32px;
 }
 
 .nav-bar-logout {
@@ -308,6 +307,10 @@ body {
   background: linear-gradient(to bottom right, white, whitesmoke);
   border-radius: 10px;
   border: 1px solid orange;
+}
+
+.userItem-name {
+  font-family: 'Permanent Marker', cursive;
 }
 
 .userItem-delete {
