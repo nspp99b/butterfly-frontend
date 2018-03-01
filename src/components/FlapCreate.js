@@ -26,7 +26,7 @@ class FlapCreate extends React.Component {
     return (
       <form className="flap-create" onSubmit={this.handleFlapCreate}>
         <textarea className="flap-create-textarea" placeholder="what did you do now..." value={this.state.content} name="content" onChange={this.onInputChange}></textarea>
-        <input className="flap-create-submit-button" type="submit" value="create new flap" />
+        <input className="flap-create-submit-button" type="submit" value="Flap!" />
       </form>
     )
   }

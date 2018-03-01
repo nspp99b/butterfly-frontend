@@ -13,6 +13,7 @@ const Navbar = (props) => {
         <ul>
           <li className="nav-bar-logout" onClick={props.logout}>Logout</li>
           <li><Link to='/users'>Users</Link></li>
+          <li><Link to='/main'>Main</Link></li>
         </ul>
         :
         <ul>

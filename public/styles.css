@@ -133,12 +133,13 @@ body {
 }
 
 .submit-button {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Kaushan Script', cursive;
   font-size: 10pt;
   border: 1px solid;
   border-color: black;
   border-radius: 5px;
   background-color: orangered;
+  background: linear-gradient(to bottom right, orangered, orange);
   color: white;
   margin-top: 20px;
 }
@@ -211,12 +212,13 @@ body {
 }
 
 .flap-create-submit-button {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Kaushan Script', cursive;
   font-size: 10pt;
   border: 1px solid;
   border-color: black;
   border-radius: 5px;
   background-color: orangered;
+  background: linear-gradient(to bottom right, orangered, orange);
   color: white;
 }
 
