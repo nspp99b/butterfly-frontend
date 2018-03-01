@@ -1,9 +1,9 @@
 import React from 'react'
 
-const UserItem = (props) => {
+const UserProfile = (props) => {
   return (
     <div className="userItem">{props.user.name}</div>
   )
 }
 
-export default UserItem
+export default UserProfile

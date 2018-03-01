@@ -1,12 +1,12 @@
 import React from 'react'
-import UserItem from '../components/UserItem'
+import UserProfile from '../components/UserProfile'
 
 const UserContainer = (props) => {
   console.log('User Container Rendered')
   console.log(props)
   return (
     <aside className="user-container">
-      < UserItem user={props.user}/>
+      < UserProfile user={props.user}/>
     </aside>
   )
 
