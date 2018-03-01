@@ -33,7 +33,7 @@ class FlapItem extends React.Component {
         <div>{this.props.flap.content}</div>
         { this.props.flap.user.name !== "--" &&
         <div>
-          <img className="flapItem-img" src={this.state.imageSrc} alt="create effect" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={this.handleFlapCreate}>
+          <img className="flapItem-img" src={this.state.imageSrc} alt="" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={this.handleFlapCreate}>
           </img>
           { this.state.showFlapCreate === true && < FlapCreate user={this.props.currentUser} parent={this.props.flap.id}/> }
         </div> }

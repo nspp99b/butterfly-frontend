@@ -15,7 +15,7 @@ class App extends React.Component {
     auth: { currentUser: null }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     const token = localStorage.getItem('token');
     if (token) {
       this.props.getCurrentUser();
@@ -25,6 +25,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log('app rendered')
     return (
       <div className="app-wrapper">
         <NavBar currentUser={this.props.currentUser} logout={this.props.logoutUser}/>
@@ -34,6 +35,7 @@ class App extends React.Component {
         <Route exact path="/main" render={() => (this.props.isLoggedIn ? (<MainContainer/>) : (<Redirect to="/login"/>))}/>
         <Route path="/users/:userid" render={() => (this.props.isLoggedIn ? (<ProfileContainer/>) : (<Redirect to="/login"/>))}/>
         <Route exact path="/users" render={() => (this.props.isLoggedIn ? (<UsersContainer/>) : (<Redirect to="/login"/>))}/>
+
       </div>
     );
   }
@@ -47,5 +49,3 @@ const mapStateToProps = (state) => {
 }
 
 export default withRouter(connect(mapStateToProps, actions)(App));
-
-// export default withRouter(connect((state) => ({ auth: state.auth }), { currentUser, logOut })(App));
