@@ -45,6 +45,15 @@ const getLoggedInUser = () => {
 //   }).then(res => res.json());
 // }
 
+//users
+
+const getUsers = () => {
+  return fetch(`${API_ROOT}/users`, {
+    headers: headers()
+  }).then(res => res.json());
+}
+
+
 //flaps
 
 const getFlaps = () => {
@@ -85,5 +94,8 @@ export default {
     getFlap,
     postFlap,
     patchFlap
+  },
+  users: {
+    getUsers
   }
 }
