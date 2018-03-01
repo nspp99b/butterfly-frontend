@@ -3,14 +3,14 @@ import UserItem from './UserItem';
 
 const UserList = (props) => {
   console.log('UserList rendered')
-  const usersArray = props.flaps.map(f => <FlapItem key={f.id} flap={f} showEffects={props.showEffects} user={props.user} updateFlap={props.updateFlap}/>)
+  const usersArray = props.users.map(u => <UserItem key={u.id} user={u} currentUser={props.currentUser}/>)
 
   return (
     <div>
-      {flapsArray}
+      {usersArray}
     </div>
   )
-  
+
 }
 
 export default UserList

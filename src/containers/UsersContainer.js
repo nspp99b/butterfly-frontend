@@ -1,26 +1,30 @@
 import React from 'react';
-import UserList from '../components/UserList';
 import { connect } from 'react-redux';
-import * as actions from '../actions/'
+import { getCurrentUser } from '../actions'
+import UserContainer from './UserContainer';
+import UserListContainer from './UserListContainer';
+import FlapCreate from '../components/FlapCreate';
 
 class UsersContainer extends React.Component {
-  
-  componentDidMount() {
-    // this.props.fetchUsers()
-  }
-  
-  render() {  
-    return (
-      <article className="flaps-container">
-        <UserList flaps={this.props.flaps} showEffects={this.props.showEffects} user={this.props.user} updateFlap={this.props.updateFlap}/> 
-      </article>
-    )    
-  }
 
+  render() {
+    console.log('UsersContainer rendered')
+    console.log(this.props)
+    return (
+      <div className="main-wrapper">
+        <FlapCreate currentUser={this.props.currentUser} parent={null}/>
+        <UserContainer currentUser={this.props.currentUser}/>
+        <UserListContainer currentUser={this.props.currentUser}/>
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = (state) => {
-  return {flaps: state.flapsReducer.flaps}
+  return {
+    currentUser: state.usersReducer.currentUser,
+    isLoggedIn: state.usersReducer.isLoggedIn
+  }
 }
 
-export default connect(mapStateToProps, actions)(UsersContainer)
+export default connect(mapStateToProps, {getCurrentUser})(UsersContainer)

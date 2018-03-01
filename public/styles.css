@@ -232,7 +232,7 @@ body {
   /* overflow-y: auto; */
 }
 
-.userItem {
+.userProfile {
   margin: 10px 15px 15px 10px;
   padding: 10px 15px 15px 10px;
   background: white;
@@ -241,7 +241,7 @@ body {
   border: 1px solid orange;
 }
 
-.userItem {
+.userProfile {
   font-family: 'Permanent Marker', cursive;
 }
 
@@ -284,6 +284,49 @@ body {
 }
 
 .flapItem-fx:hover {
+  cursor: pointer;
+  color: orangered;
+}
+
+/* userList-Container */
+
+.userList-container {
+  grid-area: flaps-container;
+  border: 1px solid orangered;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.userItem {
+  margin: 10px 15px 15px 10px;
+  padding: 10px 15px 15px 10px;
+  background: white;
+  background: linear-gradient(to bottom right, white, whitesmoke);
+  border-radius: 10px;
+  border: 1px solid orange;
+}
+
+.userItem-delete {
+  padding-left: 5px;
+  padding-right: 5px;
+  float: right;
+  color: orange;
+}
+
+.userItem-delete:hover {
+  cursor: pointer;
+  color: orangered;
+}
+
+.userItem-img:hover {
+  cursor: pointer;
+}
+
+.userItem-user {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.userItem-fx:hover {
   cursor: pointer;
   color: orangered;
 }

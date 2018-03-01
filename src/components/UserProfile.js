@@ -2,7 +2,7 @@ import React from 'react'
 
 const UserProfile = (props) => {
   return (
-    <div className="userItem">{props.user.name}</div>
+    <div className="userProfile">{props.currentUser.name}</div>
   )
 }
 

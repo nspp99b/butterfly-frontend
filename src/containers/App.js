@@ -6,9 +6,10 @@ import NavBar from '../components/NavBar';
 import Login from '../components/Login';
 import Signup from '../components/Signup';
 import MainContainer from './MainContainer';
+import UsersContainer from './UsersContainer';
 
 class App extends React.Component {
-  
+
   state = {
     auth: { currentUser: null }
   }
@@ -21,28 +22,28 @@ class App extends React.Component {
       console.log('No token found');
     }
   }
-  
+
   render() {
     return (
       <div className="app-wrapper">
         <NavBar currentUser={this.props.currentUser} logout={this.props.logoutUser}/>
-        
+
         <Route exact path="/login" render={() => (this.props.isLoggedIn ? (<Redirect to="/main"/>) : (<Login/>))}/>
         <Route exact path="/signup" render={() => (this.props.isLoggedIn ? (<Redirect to="/main"/>) : (<Signup/>))}/>
         <Route exact path="/main" render={() => (this.props.isLoggedIn ? (<MainContainer/>) : (<Redirect to="/login"/>))}/>
-        
+        <Route exact path="/users" render={() => (this.props.isLoggedIn ? (<UsersContainer/>) : (<Redirect to="/login"/>))}/>
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  return { 
+  return {
     currentUser: state.usersReducer.currentUser,
     isLoggedIn: state.usersReducer.isLoggedIn
    }
 }
- 
+
 export default withRouter(connect(mapStateToProps, actions)(App));
 
 // export default withRouter(connect((state) => ({ auth: state.auth }), { currentUser, logOut })(App));
