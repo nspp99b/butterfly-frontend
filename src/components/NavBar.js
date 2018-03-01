@@ -11,7 +11,7 @@ const Navbar = (props) => {
       <h4 className="nav-bar-title">BUTTERFLY</h4>
       <ul>
         { loggedIn ?
-        <li className="nav-bar-logout" onClick={props.logOut}>Logout</li>
+        <li className="nav-bar-logout" onClick={props.logout}>Logout</li>
         :
         <li><Link to='/login'>Login</Link></li>
         }

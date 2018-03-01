@@ -1,5 +1,6 @@
 import React from 'react';
-import adapter from '../adapter';
+import { signupUser } from '../actions/signupUser';
+import { connect } from 'react-redux';
 
 class Signup extends React.Component {
   state = {
@@ -11,14 +12,8 @@ class Signup extends React.Component {
 
   handleSignup = (e) => {
     e.preventDefault()
-    adapter.auth.signup(this.state).then(res => {
-      if (res.error) {
-        alert(res.error)
-      } else {
-        this.props.history.push('/')
-        this.props.setUser(res)
-      }
-    })
+    this.props.signupUser(this.state)
+    this.props.history.push('/main')
   }
 
   onInputChange = (e) => {
@@ -49,4 +44,4 @@ class Signup extends React.Component {
   }
 }
 
-export default Signup
+export default connect(null, { signupUser })(Signup)

@@ -40,8 +40,6 @@ class FlapItem extends React.Component {
       </div>
     )
   }
-
-
 }
 
 export default FlapItem

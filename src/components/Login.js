@@ -1,22 +1,26 @@
 import React from 'react';
-import adapter from '../adapter'
-import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { loginUser } from '../actions/loginUser'
 
 class Login extends React.Component {
   state = {
     email: "",
     password: ""
   }
+  
+  // componentWillMount() {
+  //   if (this.props.currentUser !== 'null') {
+  //     this.props.history.push('/main')
+  //   }
+  // }
 
   handleLogin = (e) => {
     e.preventDefault()
-    adapter.auth.login(this.state.email, this.state.password).then(res => {
-      if (res.error) {
-        alert(res.error)
-      } else {
-        this.props.setUser(res)
-        this.props.history.push("/")
-      }
+    this.props.loginUser(this.state.email, this.state.password)
+    this.setState({
+      email:"",
+      password:""
     })
   }
 
@@ -25,8 +29,10 @@ class Login extends React.Component {
       [e.target.name]: e.target.value
     })
   }
-
+  
   render() {
+    console.log('login component rendered')
+    console.log(this.props)
     return (
       <div className="user-form">
         <form onSubmit={this.handleLogin}>
@@ -42,4 +48,8 @@ class Login extends React.Component {
   }
 }
 
-export default Login
+const mapStateToProps = (state) => {
+  return { currentUser: state.usersReducer.currentUser }
+}
+
+export default connect(mapStateToProps, { loginUser })(Login)

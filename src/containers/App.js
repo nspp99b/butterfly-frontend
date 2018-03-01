@@ -1,48 +1,22 @@
-import React, { Component } from 'react';
-import { Route, withRouter } from 'react-router-dom';
-import adapter from '../adapter'
+import React from 'react';
+import { Route, withRouter, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 import NavBar from '../components/NavBar';
 import Login from '../components/Login';
 import Signup from '../components/Signup';
 import MainContainer from './MainContainer';
 
-class App extends Component {
+class App extends React.Component {
   
   state = {
     auth: { currentUser: null }
   }
 
-  setLoggedInUser = (user) => {
-    localStorage.setItem('token', user.token)
-    this.setState({
-      auth: {
-        currentUser: {
-          id: user.id,
-          email: user.email,
-          name: user.name
-        }
-      }
-    })
-  }
-
-  removeLoggedInUser = () => {
-    localStorage.removeItem('token')
-    this.setState({
-      auth: { currentUser: null }
-    })
-    this.props.history.push('/login')
-  }
-
   componentDidMount() {
     const token = localStorage.getItem('token');
     if (token) {
-      adapter.auth.getLoggedInUser().then(user => {
-        if (user) {
-          this.setState({ auth: { currentUser: user } })
-        } else {
-          this.setState({ auth: { currentUser: null } })
-        }
-      })
+      this.props.getCurrentUser();
     } else {
       console.log('No token found');
     }
@@ -51,18 +25,22 @@ class App extends Component {
   render() {
     return (
       <div className="app-wrapper">
-        <NavBar currentUser={this.state.auth.currentUser} logOut={this.removeLoggedInUser}/>
-        <Route exact path='/login' render={(routerProps) => {
-          return <Login history={routerProps.history} setUser={this.setLoggedInUser} />
-        }} />
-
-        <Route exact path='/signup' render={(routerProps) => {
-          return <Signup history={routerProps.history} setUser={this.setLoggedInUser} />
-        }} />
-        { this.state.auth.currentUser != null && <MainContainer user={this.state.auth.currentUser} parent={null}/> }
+        <NavBar currentUser={this.props.currentUser} logout={this.props.logoutUser}/>
+        <Route exact path="/login" render={() => (this.props.isLoggedIn ? (<Redirect to="/main"/>) : (<Login/>))}/>
+        <Route exact path='/signup' component={Signup}/>
+        <Route exact path="/main" render={() => (this.props.isLoggedIn ? (<MainContainer/>) : (<Redirect to="/login"/>))}/>
       </div>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return { 
+    currentUser: state.usersReducer.currentUser,
+    isLoggedIn: state.usersReducer.isLoggedIn
+   }
+}
  
-export default withRouter(App);
+export default withRouter(connect(mapStateToProps, actions)(App));
+
+// export default withRouter(connect((state) => ({ auth: state.auth }), { currentUser, logOut })(App));

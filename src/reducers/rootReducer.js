@@ -1,9 +1,25 @@
 import { combineReducers } from 'redux';	
 
 export const rootReducer = combineReducers({	
-  flapsReducer,
-  flapReducer
+  usersReducer,
+  flapsReducer
 });	
+
+function usersReducer(state = { currentUser: null, isLoggedIn: false }, action) {
+  switch (action.type) {
+    
+    case 'SET_CURRENT_USER':
+      localStorage.setItem('token', action.payload.token)
+      return {...state, currentUser: {id: action.payload.id, name: action.payload.name, email: action.payload.email}, isLoggedIn: true }
+    
+    case 'LOGOUT_USER':
+      localStorage.removeItem('token')
+      return { currentUser: null, isLoggedIn: false }
+    
+    default:
+      return state
+  }
+}
 
 function flapsReducer(state = { flaps: [] }, action) {	
   switch (action.type) {	
@@ -25,12 +41,12 @@ function flapsReducer(state = { flaps: [] }, action) {
   }	
 }	
 
-function flapReducer(state = {}, action) {
-  switch (action.type) {
-    
-    case 'FETCH_FLAP':
-      return action.payload
-    default:
-      return state;
-  }
-}
+// function flapReducer(state = {}, action) {
+//   switch (action.type) {
+// 
+//     case 'FETCH_FLAP':
+//       return action.payload
+//     default:
+//       return state;
+//   }
+// }
