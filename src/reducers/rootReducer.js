@@ -5,7 +5,7 @@ export const rootReducer = combineReducers({
   flapsReducer
 });
 
-function usersReducer(state = { currentUser: null, isLoggedIn: false, users: [] }, action) {
+function usersReducer(state = { currentUser: null, isLoggedIn: false, users: [], selectedUser: null }, action) {
   switch (action.type) {
 
     case 'SET_CURRENT_USER':
@@ -18,6 +18,9 @@ function usersReducer(state = { currentUser: null, isLoggedIn: false, users: [] 
 
     case 'FETCH_USERS':
       return { ...state, users: action.payload }
+
+    case 'FETCH_USER':
+      return { ...state, selectedUser: action.payload}
 
     default:
       return state

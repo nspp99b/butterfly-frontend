@@ -147,6 +147,7 @@ body {
 .submit-button:hover {
   background-color: white;
   color:black;
+  border-color: orange;
 }
 
 .user-form input {
@@ -225,6 +226,7 @@ body {
 .flap-create-submit-button:hover {
   background-color: white;
   color: black;
+  border-color: orange;
 }
 
 /* UserContainer */
@@ -268,6 +270,21 @@ body {
   border: 1px solid orange;
 }
 
+.flapItem a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.flapItem a:hover {
+  text-decoration: none;
+  color: orange;
+}
+
+.flapItem-user {
+  font-family: 'Permanent Marker', cursive;
+}
+
 .flapItem-delete {
   padding-left: 5px;
   padding-right: 5px;
@@ -282,10 +299,6 @@ body {
 
 .flapItem-img:hover {
   cursor: pointer;
-}
-
-.flapItem-user {
-  font-family: 'Permanent Marker', cursive;
 }
 
 .flapItem-fx:hover {
@@ -311,31 +324,10 @@ body {
   border: 1px solid orange;
 }
 
-.userItem-name {
-  font-family: 'Permanent Marker', cursive;
-}
-
-.userItem-delete {
-  padding-left: 5px;
-  padding-right: 5px;
-  float: right;
-  color: orange;
-}
-
-.userItem-delete:hover {
-  cursor: pointer;
-  color: orangered;
-}
-
-.userItem-img:hover {
-  cursor: pointer;
-}
-
 .userItem-user {
   font-family: 'Permanent Marker', cursive;
 }
 
-.userItem-fx:hover {
-  cursor: pointer;
-  color: orangered;
+.userItem-name {
+  font-family: 'Permanent Marker', cursive;
 }

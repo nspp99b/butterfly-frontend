@@ -7,6 +7,7 @@ import Login from '../components/Login';
 import Signup from '../components/Signup';
 import MainContainer from './MainContainer';
 import UsersContainer from './UsersContainer';
+import ProfileContainer from './ProfileContainer';
 
 class App extends React.Component {
 
@@ -31,6 +32,7 @@ class App extends React.Component {
         <Route exact path="/login" render={() => (this.props.isLoggedIn ? (<Redirect to="/main"/>) : (<Login/>))}/>
         <Route exact path="/signup" render={() => (this.props.isLoggedIn ? (<Redirect to="/main"/>) : (<Signup/>))}/>
         <Route exact path="/main" render={() => (this.props.isLoggedIn ? (<MainContainer/>) : (<Redirect to="/login"/>))}/>
+        <Route path="/users/:userid" render={() => (this.props.isLoggedIn ? (<ProfileContainer/>) : (<Redirect to="/login"/>))}/>
         <Route exact path="/users" render={() => (this.props.isLoggedIn ? (<UsersContainer/>) : (<Redirect to="/login"/>))}/>
       </div>
     );
@@ -40,8 +42,8 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     currentUser: state.usersReducer.currentUser,
-    isLoggedIn: state.usersReducer.isLoggedIn
-   }
+    isLoggedIn: state.usersReducer.isLoggedIn,
+  }
 }
 
 export default withRouter(connect(mapStateToProps, actions)(App));

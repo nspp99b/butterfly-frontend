@@ -5,10 +5,6 @@ import * as actions from '../actions/'
 
 class FlapListContainer extends React.Component {
 
-  componentDidMount() {
-    this.props.fetchFlaps()
-  }
-
   render() {
     return (
       <article className="flaps-container">
@@ -20,7 +16,10 @@ class FlapListContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return {flaps: state.flapsReducer.flaps}
+  return {
+    currentUser: state.usersReducer.currentUser,
+    flaps: state.flapsReducer.flaps
+  }
 }
 
 export default connect(mapStateToProps, actions)(FlapListContainer)

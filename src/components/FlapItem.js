@@ -1,6 +1,8 @@
 import React from 'react';
 import FlapList from './FlapList'
 import FlapCreate from './FlapCreate'
+import { Link } from 'react-router-dom'
+// <span className="flapItem-user">{this.props.flap.user.name}</span>
 
 class FlapItem extends React.Component {
 
@@ -24,7 +26,8 @@ class FlapItem extends React.Component {
   render() {
     return (
       <div className="flapItem">
-        <span className="flapItem-user">{this.props.flap.user.name}</span>
+        <Link to={`/users/${this.props.flap.user.id}`}>{this.props.flap.user.name}</Link>
+
         { this.props.flap.user.id === this.props.currentUser.id &&
         <span className="flapItem-delete" onClick={() => this.props.updateFlap(this.props.flap.id)}>x</span> }
         <div>{this.props.flap.content}</div>

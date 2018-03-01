@@ -53,6 +53,11 @@ const getUsers = () => {
   }).then(res => res.json());
 }
 
+const getUser = (uid) => {
+  return fetch(`${API_ROOT}/users/${uid}`, {
+    headers: headers()
+  }).then(res => res.json());
+}
 
 //flaps
 
@@ -96,6 +101,7 @@ export default {
     patchFlap
   },
   users: {
-    getUsers
+    getUsers,
+    getUser
   }
 }

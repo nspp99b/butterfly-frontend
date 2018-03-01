@@ -5,10 +5,6 @@ import * as actions from '../actions/'
 
 class UserListContainer extends React.Component {
 
-  componentDidMount() {
-    this.props.fetchUsers()
-  }
-
   render() {
     return (
       <article className="userList-container">

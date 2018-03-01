@@ -8,3 +8,4 @@ export { signupUser } from './signupUser';
 export { setCurrentUser } from './setCurrentUser';
 export { getCurrentUser } from './getCurrentUser';
 export { fetchUsers } from './fetchUsers';
+export { fetchUser } from './fetchUser';
