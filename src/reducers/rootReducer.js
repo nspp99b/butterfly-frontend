@@ -5,11 +5,14 @@ export const rootReducer = combineReducers({
   flapsReducer
 });
 
-function usersReducer(state = { currentUser: null, isLoggedIn: false, users: [], selectedUser: null }, action) {
+function usersReducer(state = { currentUser: {id: 0, name: "", email: ""}, isLoggedIn: false, users: [], selectedUser: {id: 0, name: "", email: ""} }, action) {
   switch (action.type) {
 
     case 'SET_CURRENT_USER':
-      localStorage.setItem('token', action.payload.token)
+      console.log(`set current user payload: ${action.payload}`)
+      if (action.payload.token != null) {
+        localStorage.setItem('token', action.payload.token)
+      }
       return {...state, currentUser: {id: action.payload.id, name: action.payload.name, email: action.payload.email}, isLoggedIn: true }
 
     case 'LOGOUT_USER':

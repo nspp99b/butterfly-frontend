@@ -15,7 +15,7 @@ class App extends React.Component {
     auth: { currentUser: null }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const token = localStorage.getItem('token');
     if (token) {
       this.props.getCurrentUser();
@@ -30,11 +30,11 @@ class App extends React.Component {
       <div className="app-wrapper">
         <NavBar currentUser={this.props.currentUser} logout={this.props.logoutUser}/>
 
-        <Route exact path="/login" render={() => (this.props.isLoggedIn ? (<Redirect to="/main"/>) : (<Login/>))}/>
+        <Route exact path="/login" render={() => (localStorage.getItem('token') ? (<Redirect to="/main"/>) : (<Login/>))}/>
         <Route exact path="/signup" render={() => (this.props.isLoggedIn ? (<Redirect to="/main"/>) : (<Signup/>))}/>
-        <Route exact path="/main" render={() => (this.props.isLoggedIn ? (<MainContainer/>) : (<Redirect to="/login"/>))}/>
-        <Route path="/users/:userid" render={() => (this.props.isLoggedIn ? (<ProfileContainer/>) : (<Redirect to="/login"/>))}/>
-        <Route exact path="/users" render={() => (this.props.isLoggedIn ? (<UsersContainer/>) : (<Redirect to="/login"/>))}/>
+        <Route exact path="/main" render={() => (localStorage.getItem('token') ? (<MainContainer/>) : (<Redirect to="/login"/>))}/>
+        <Route exact path="/users/:userid" render={(props) => (localStorage.getItem('token') ? (<ProfileContainer userToFetch={props.match.params.userid}/>) : (<Redirect to="/login"/>))}/>
+        <Route exact path="/users" render={() => (localStorage.getItem('token') ? (<UsersContainer/>) : (<Redirect to="/login"/>))}/>
 
       </div>
     );

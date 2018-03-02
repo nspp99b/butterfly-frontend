@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Navbar = (props) => {
 
-  const loggedIn = !!props.currentUser
+  const loggedIn = localStorage.getItem('token')
 
   return (
     <nav className="nav-bar">

@@ -18,7 +18,6 @@ class UserListContainer extends React.Component {
 const mapStateToProps = (state) => {
   return {
     currentUser: state.usersReducer.currentUser,
-    isLoggedIn: state.usersReducer.isLoggedIn,
     users: state.usersReducer.users
   }
 }

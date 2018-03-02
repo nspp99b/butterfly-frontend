@@ -6,6 +6,7 @@ import * as actions from '../actions/'
 class FlapListContainer extends React.Component {
 
   render() {
+    console.log(`FlapListContainer rendering: ${this.props}`)
     return (
       <article className="flaps-container">
         <FlapList flaps={this.props.flaps} showEffects={this.props.showEffects} currentUser={this.props.currentUser} updateFlap={this.props.updateFlap}/>

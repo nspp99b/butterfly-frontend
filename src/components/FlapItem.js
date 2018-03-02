@@ -7,16 +7,16 @@ import { Link } from 'react-router-dom'
 class FlapItem extends React.Component {
 
   state = {
-    imageSrc: "butterfly_logo_inverted_25px.png",
+    imageSrc: "../butterfly_icon_white_25px.png",
     showFlapCreate: false
   }
 
   handleMouseEnter = () => {
-    this.setState({ imageSrc: "butterfly_logo_purple_25px.png"})
+    this.setState({ imageSrc: "../butterfly_icon_purple_25px.png"})
   }
 
   handleMouseLeave = () => {
-    this.setState({ imageSrc: "butterfly_logo_inverted_25px.png"})
+    this.setState({ imageSrc: "../butterfly_icon_white_25px.png"})
   }
 
   handleFlapCreate = () => {
@@ -33,8 +33,7 @@ class FlapItem extends React.Component {
         <div>{this.props.flap.content}</div>
         { this.props.flap.user.name !== "--" &&
         <div>
-          <img className="flapItem-img" src={this.state.imageSrc} alt="" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={this.handleFlapCreate}>
-          </img>
+          <img className="flapItem-img" src={this.state.imageSrc} alt="" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={this.handleFlapCreate}/>
           { this.state.showFlapCreate === true && < FlapCreate user={this.props.currentUser} parent={this.props.flap.id}/> }
         </div> }
         <div className="flapItem-fx" onClick={() => this.props.showEffects(this.props.flap.id)}>FX: {this.props.flap.fx_count}</div>

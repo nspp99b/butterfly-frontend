@@ -297,6 +297,10 @@ body {
   color: orangered;
 }
 
+.flapItem-img {
+  
+}
+
 .flapItem-img:hover {
   cursor: pointer;
 }

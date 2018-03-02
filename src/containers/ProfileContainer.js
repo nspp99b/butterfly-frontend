@@ -18,21 +18,18 @@ class ProfileContainer extends React.Component {
     return (
       <div className="main-wrapper">
         <FlapCreate currentUser={this.props.currentUser} parent={null}/>
-        { this.props.selectedUser && <UserContainer user={this.props.selectedUser}/>}
-        { this.props.flaps && <FlapListContainer />}
+        <UserContainer user={this.props.selectedUser}/>
+        <FlapListContainer />
       </div>
     )
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps)
+const mapStateToProps = (state) => {
   return {
     currentUser: state.usersReducer.currentUser,
     isLoggedIn: state.usersReducer.isLoggedIn,
-    userToFetch: ownProps.match.params.userid,
     selectedUser: state.usersReducer.selectedUser,
-    flaps: state.flapsReducer.flaps
   }
 }
 
