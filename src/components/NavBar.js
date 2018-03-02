@@ -7,7 +7,7 @@ const Navbar = (props) => {
 
   return (
     <nav className="nav-bar">
-      <img className="logo-img" src="butterfly_logo.png" alt="butterfly logo" />
+      <img className="logo-img" src="/butterfly_logo.png" alt="butterfly logo" />
       <h4 className="nav-bar-title">BUTTERFLY</h4>
       { loggedIn ?
         <ul>

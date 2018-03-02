@@ -1,7 +1,7 @@
 /* app wrapper, structure */
 
 body {
-  background-image: url("butterfly_logo_trans_50.png");
+  background-image: url("/butterfly_logo_trans_50.png");
 }
 
 .app-wrapper {
@@ -298,7 +298,7 @@ body {
 }
 
 .flapItem-img {
-  
+
 }
 
 .flapItem-img:hover {

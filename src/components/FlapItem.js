@@ -7,16 +7,16 @@ import { Link } from 'react-router-dom'
 class FlapItem extends React.Component {
 
   state = {
-    imageSrc: "../butterfly_icon_white_25px.png",
+    imageSrc: "/butterfly_icon_white_25px.png",
     showFlapCreate: false
   }
 
   handleMouseEnter = () => {
-    this.setState({ imageSrc: "../butterfly_icon_purple_25px.png"})
+    this.setState({ imageSrc: "/butterfly_icon_purple_25px.png"})
   }
 
   handleMouseLeave = () => {
-    this.setState({ imageSrc: "../butterfly_icon_white_25px.png"})
+    this.setState({ imageSrc: "/butterfly_icon_white_25px.png"})
   }
 
   handleFlapCreate = () => {
