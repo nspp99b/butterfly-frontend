@@ -24,6 +24,8 @@ class FlapItem extends React.Component {
   }
 
   render() {
+    console.log('FlapItem rendered')
+    console.log(this.props)
     return (
       <div className="flapItem">
         <Link to={`/users/${this.props.flap.user.id}`}>{this.props.flap.user.name}</Link>
@@ -34,7 +36,7 @@ class FlapItem extends React.Component {
         { this.props.flap.user.name !== "--" &&
         <div>
           <img className="flapItem-img" src={this.state.imageSrc} alt="" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={this.handleFlapCreate}/>
-          { this.state.showFlapCreate === true && < FlapCreate user={this.props.currentUser} parent={this.props.flap.id}/> }
+          { this.state.showFlapCreate === true && < FlapCreate currentUser={this.props.currentUser} parent={this.props.flap.id}/> }
         </div> }
         <div className="flapItem-fx" onClick={() => this.props.showEffects(this.props.flap.id)}>FX: {this.props.flap.fx_count}</div>
 
