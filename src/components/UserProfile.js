@@ -18,7 +18,7 @@ const UserProfile = (props) => {
   return (
     <div className="userProfile">
       <span>{props.user.name}</span>
-        { props.currentUser && <FollowButton user={props.user} currentUser={props.currentUser} follow={props.follow} unfollow={props.unfollow}/>}
+        { props.currentUser && props.currentUser.id !== props.user.id && <FollowButton user={props.user} currentUser={props.currentUser} follow={props.follow} unfollow={props.unfollow}/>}
     </div>
 
   )
