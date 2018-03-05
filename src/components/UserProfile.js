@@ -9,7 +9,7 @@ const UserProfile = (props) => {
     console.log('display Button fired')
     return (
       props.user.followers.includes(props.currentUser.id) ?
-      <button className="userProfile-followbuttons" onClick={props.unfollow}>unfollow</button>
+      <button className="userProfile-followbuttons" onClick={() => props.unfollow(props.currentUser.id, props.user.id)}>unfollow</button>
       :
       <button className="userProfile-followbuttons" onClick={() => props.follow(props.currentUser.id, props.user.id)}>follow</button>
     )
@@ -18,7 +18,7 @@ const UserProfile = (props) => {
   return (
     <div className="userProfile">
       <span>{props.user.name}</span>
-        { props.currentUser && <FollowButton user={props.user} currentUser={props.currentUser} follow={props.follow}/>}
+        { props.currentUser && <FollowButton user={props.user} currentUser={props.currentUser} follow={props.follow} unfollow={props.unfollow}/>}
     </div>
 
   )

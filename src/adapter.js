@@ -62,6 +62,14 @@ const postFollow = (follower_id, followed_id) => {
   }).then(res => res.json());
 }
 
+const postUnfollow = (follower_id, followed_id) => {
+  return fetch(`${API_ROOT}/unfollow`, {
+    method: 'POST',
+    headers: headers(),
+    body: JSON.stringify({ follower_id, followed_id })
+  }).then(res => res.json());
+}
+
 //flaps
 
 const getFlaps = () => {
@@ -108,6 +116,7 @@ export default {
     getUser
   },
   follows: {
-    postFollow
+    postFollow,
+    postUnfollow
   }
 }
