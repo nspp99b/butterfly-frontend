@@ -13,7 +13,7 @@ function usersReducer(state = { currentUser: {id: 0, name: "", email: "", follow
       if (action.payload.token != null) {
         localStorage.setItem('token', action.payload.token)
       }
-      return {...state, currentUser: {id: action.payload.id, name: action.payload.name, email: action.payload.email}, isLoggedIn: true }
+      return {...state, currentUser: action.payload.user, isLoggedIn: true }
 
     case 'LOGOUT_USER':
       localStorage.removeItem('token')
