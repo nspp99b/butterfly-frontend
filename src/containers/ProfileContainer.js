@@ -18,7 +18,7 @@ class ProfileContainer extends React.Component {
     return (
       <div className="main-wrapper">
         <FlapCreate currentUser={this.props.currentUser} parent={null}/>
-        <UserContainer user={this.props.selectedUser}/>
+        <UserContainer user={this.props.selectedUser} currentUser={this.props.currentUser} follow={this.props.follow}/>
         <FlapListContainer />
       </div>
     )

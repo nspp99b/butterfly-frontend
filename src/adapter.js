@@ -38,13 +38,6 @@ const getLoggedInUser = () => {
   }).then(res => res.json())
 }
 
-// const logout = () => {
-//   return fetch(`${URL_ROOT}/logout`, {
-//     method: 'POST',
-//     headers: headers()
-//   }).then(res => res.json());
-// }
-
 //users
 
 const getUsers = () => {
@@ -56,6 +49,16 @@ const getUsers = () => {
 const getUser = (uid) => {
   return fetch(`${API_ROOT}/users/${uid}`, {
     headers: headers()
+  }).then(res => res.json());
+}
+
+//follows
+
+const postFollow = (follower_id, followed_id) => {
+  return fetch(`${API_ROOT}/connections`, {
+    method: 'POST',
+    headers: headers(),
+    body: JSON.stringify({ follower_id, followed_id })
   }).then(res => res.json());
 }
 
@@ -103,5 +106,8 @@ export default {
   users: {
     getUsers,
     getUser
+  },
+  follows: {
+    postFollow
   }
 }

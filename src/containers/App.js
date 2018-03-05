@@ -12,9 +12,9 @@ import ProfileContainer from './ProfileContainer';
 
 class App extends React.Component {
 
-  state = {
-    auth: { currentUser: null }
-  }
+  // state = {
+  //   auth: { currentUser: null }
+  // }
 
   componentDidMount() {
     const token = localStorage.getItem('token');

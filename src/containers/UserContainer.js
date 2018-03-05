@@ -6,7 +6,7 @@ const UserContainer = (props) => {
   console.log(props)
   return (
     <aside className="user-container">
-      < UserProfile user={props.user}/>
+      < UserProfile user={props.user} currentUser={props.currentUser} follow={props.follow}/>
     </aside>
   )
 

@@ -9,3 +9,4 @@ export { setCurrentUser } from './setCurrentUser';
 export { getCurrentUser } from './getCurrentUser';
 export { fetchUsers } from './fetchUsers';
 export { fetchUser } from './fetchUser';
+export { follow } from './follow';
