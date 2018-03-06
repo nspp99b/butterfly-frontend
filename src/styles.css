@@ -1,7 +1,9 @@
 /* app wrapper, structure */
 
 body {
+  height: 100%;
   background-image: url("/butterfly_logo_trans_50.png");
+  background-size: auto;
 }
 
 .app-wrapper {
@@ -231,10 +233,10 @@ body {
 
 .user-container {
   grid-area: user-container;
+  overflow: scroll;
   border: 1px solid orangered;
   border-radius: 10px;
   font-family: 'Roboto', sans-serif;
-  /* overflow-y: auto; */
 }
 
 .userProfile {
@@ -282,6 +284,7 @@ body {
 
 .flaps-container {
   grid-area: flaps-container;
+  overflow: scroll;
   border: 1px solid orangered;
   border-radius: 10px;
   font-family: 'Roboto', sans-serif;
@@ -350,6 +353,7 @@ body {
 /* userList-Container */
 
 .userList-container {
+  overflow: scroll;
   grid-area: flaps-container;
   border: 1px solid orangered;
   border-radius: 10px;
@@ -360,9 +364,20 @@ body {
   margin: 10px 15px 15px 10px;
   padding: 10px 15px 15px 10px;
   background: white;
-  background: linear-gradient(to bottom right, white, whitesmoke);
+  background: linear-gradient(to bottom, whitesmoke, white, floralwhite);
   border-radius: 10px;
   border: 1px solid orange;
+}
+
+.userItem:hover {
+  background: white;
+  border: 1px solid black;
+}
+
+.userItem-follows {
+  font-family: 'Roboto', sans-serif;
+  margin-left: 10px;
+  font-size: small;
 }
 
 .userItem a {

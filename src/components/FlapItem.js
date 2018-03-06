@@ -32,6 +32,7 @@ class FlapItem extends React.Component {
     console.log(this.props)
     return (
       <div className="flapItem">
+        <img className="userProfile-img" src={this.props.flap.user.image} alt="" width="80px"/>
         <Link to={`/users/${this.props.flap.user.id}`}>{this.props.flap.user.name}</Link>
 
         { this.props.flap.user.id === this.props.currentUser.id &&

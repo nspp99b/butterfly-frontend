@@ -5,7 +5,7 @@ export const rootReducer = combineReducers({
   flapsReducer
 });
 
-function usersReducer(state = { currentUser: {id: 0, name: "", email: "", following: [], followers: []}, isLoggedIn: false, users: [], selectedUser: {id: 0, name: "", email: "", following: [], followers: []} }, action) {
+function usersReducer(state = { currentUser: {id: 0, name: "", email: "", image: "", following: [], followers: []}, isLoggedIn: false, users: [], selectedUser: {id: 0, name: "", email: "", image: "", following: [], followers: []} }, action) {
   switch (action.type) {
 
     case 'SET_CURRENT_USER':

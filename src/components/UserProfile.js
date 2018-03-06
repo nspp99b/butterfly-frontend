@@ -17,14 +17,16 @@ const UserProfile = (props) => {
 
   return (
     <div className="userProfile">
-      <span>{props.user.name}</span>
-        { props.currentUser && props.currentUser.id !== props.user.id && <FollowButton user={props.user} currentUser={props.currentUser} follow={props.follow} unfollow={props.unfollow}/>}
-      <div className="userProfile-follow-counts">
-        <span>following: {props.user.following.length} | </span>
-        <span>followers: {props.user.followers.length}</span>
+      <img className="userProfile-img" src={props.user.image} alt="" width="80px"/>
+      <div>
+        <span>{props.user.name}</span>
+          { props.currentUser && props.currentUser.id !== props.user.id && <FollowButton user={props.user} currentUser={props.currentUser} follow={props.follow} unfollow={props.unfollow}/>}
+        <div className="userProfile-follow-counts">
+          <span>following: {props.user.following.length} | </span>
+          <span>followers: {props.user.followers.length}</span>
+        </div>
       </div>
     </div>
-
   )
 }
 
