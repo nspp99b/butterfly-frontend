@@ -270,6 +270,11 @@ body {
   border-color: orange;
 }
 
+.userProfile-follow-counts {
+  font-family: 'Roboto', sans-serif;
+  font-size: small;
+}
+
 /* flaps container */
 
 .flaps-container {

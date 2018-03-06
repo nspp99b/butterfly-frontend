@@ -19,6 +19,10 @@ const UserProfile = (props) => {
     <div className="userProfile">
       <span>{props.user.name}</span>
         { props.currentUser && props.currentUser.id !== props.user.id && <FollowButton user={props.user} currentUser={props.currentUser} follow={props.follow} unfollow={props.unfollow}/>}
+      <div className="userProfile-follow-counts">
+        <span>following: {props.user.following.length} | </span>
+        <span>followers: {props.user.followers.length}</span>
+      </div>
     </div>
 
   )
