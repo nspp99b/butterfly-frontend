@@ -15,6 +15,9 @@ function usersReducer(state = { currentUser: {id: 0, name: "", email: "", follow
       }
       return {...state, currentUser: action.payload.user, isLoggedIn: true }
 
+    case 'REFRESH_CURRENT_USER':
+      return {...state, currentUser: action.payload}
+
     case 'LOGOUT_USER':
       localStorage.removeItem('token')
       return { ...state, currentUser: null, isLoggedIn: false }
