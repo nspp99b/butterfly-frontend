@@ -5,7 +5,7 @@ export function updateFlap(fid) {
   return (dispatch) => {
     adapter.flaps.patchFlap(fid)
     .then(data => {
-      dispatch({ type: 'UPDATE_FLAP', payload: data.map(f => ({...f, showFlapEffects: false})) })
+      dispatch({ type: 'UPDATE_FLAP', payload: data })
     })
   }
 }

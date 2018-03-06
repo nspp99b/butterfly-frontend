@@ -7,7 +7,8 @@ class FlapItem extends React.Component {
 
   state = {
     imageSrc: "/butterfly_icon_white_25px.png",
-    showFlapCreate: false
+    showFlapCreate: false,
+    showFlapEffects: false
   }
 
   handleMouseEnter = () => {
@@ -20,6 +21,10 @@ class FlapItem extends React.Component {
 
   handleFlapCreate = () => {
     this.setState({ showFlapCreate: !this.state.showFlapCreate })
+  }
+
+  handleShowFlapEffects = () => {
+    this.setState({ showFlapEffects: !this.state.showFlapEffects })
   }
 
   render() {
@@ -40,9 +45,9 @@ class FlapItem extends React.Component {
           <img className="flapItem-img" src={this.state.imageSrc} alt="" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={this.handleFlapCreate}/>
           { this.state.showFlapCreate === true && < FlapCreate currentUser={this.props.currentUser} parent={this.props.flap.id}/> }
         </div> }
-        <div className="flapItem-fx" onClick={() => this.props.showEffects(this.props.flap.id)}>FX: {this.props.flap.fx_count}</div>
+        <div className="flapItem-fx" onClick={() => this.handleShowFlapEffects()}>FX: {this.props.flap.fx_count}</div>
 
-        { this.props.flap.showFlapEffects === true && < FlapList flaps={this.props.flap.effects} showEffects={this.props.showEffects} currentUser={this.props.currentUser}/> }
+        { this.state.showFlapEffects === true && < FlapList flaps={this.props.flap.effects} currentUser={this.props.currentUser}/> }
       </div>
     )
   }

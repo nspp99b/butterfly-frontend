@@ -7,7 +7,7 @@ export function fetchUser(uid) {
     .then(data => {
       console.log(data)
       dispatch({ type: 'FETCH_USER', payload: data.user })
-      dispatch({ type: 'FETCH_FLAPS', payload: data.flaps.map(f => ({...f, showFlapEffects: false})) })
+      dispatch({ type: 'FETCH_FLAPS', payload: data.flaps})
     })
   }
 }

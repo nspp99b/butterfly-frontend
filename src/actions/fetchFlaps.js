@@ -7,7 +7,7 @@ export function fetchFlaps() {
     .then(data => {
       console.log('fetchflaps succeeded')
       console.log(data)
-      dispatch({ type: 'FETCH_FLAPS', payload: data.map(f => ({...f, showFlapEffects: false})) })
+      dispatch({ type: 'FETCH_FLAPS', payload: data})
     })
   }
 }
