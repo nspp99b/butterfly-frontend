@@ -10,8 +10,7 @@ const UserItem = (props) => {
       <div className="userItem-right">
         <Link to={`/users/${props.user.id}`}>{props.user.name}</Link>
         <div>
-          <span className="userItem-follows">following: {props.user.following.length}</span>
-          <span className="userItem-follows">followers: {props.user.followers.length}</span>
+          <span className="userItem-follows">following: {props.user.following.length} | followers: {props.user.followers.length}</span>
         </div>
       </div>
     </div>
