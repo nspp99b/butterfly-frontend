@@ -5,7 +5,8 @@ export function fetchFlaps() {
   return (dispatch) => {
     adapter.flaps.getFlaps()
     .then(data => {
-      console.log(`fetch flaps succeded: ${data}`)
+      console.log('fetchflaps succeeded')
+      console.log(data)
       dispatch({ type: 'FETCH_FLAPS', payload: data.map(f => ({...f, showFlapEffects: false})) })
     })
   }
