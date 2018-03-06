@@ -378,6 +378,19 @@ body {
   border: 1px solid orange;
 }
 
+.userItem-left {
+  display:table-cell;
+  vertical-align:middle;
+  width:100px;
+}
+
+.userItem-right {
+  padding-left: 10px;
+  display:table-cell;
+  vertical-align: middle;
+  width: 95%;
+}
+
 .userItem:hover {
   background: white;
   border: 1px solid black;
