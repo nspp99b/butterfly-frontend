@@ -30,6 +30,7 @@ class App extends React.Component {
         <Route exact path="/login" render={() => (localStorage.getItem('token') ? (<Redirect to="/main"/>) : (<Login/>))}/>
         <Route exact path="/signup" render={() => (this.props.isLoggedIn ? (<Redirect to="/main"/>) : (<Signup/>))}/>
         <Route exact path="/main" render={() => (localStorage.getItem('token') ? (<MainContainer currentUser={this.props.currentUser}/>) : (<Redirect to="/login"/>))}/>
+        <Route exact path="/profile" render={(props) => (localStorage.getItem('token') ? (<ProfileContainer userToFetch={this.props.currentUser.id}/>) : (<Redirect to="/login"/>))}/>
         <Route exact path="/users/:userid" render={(props) => (localStorage.getItem('token') ? (<ProfileContainer userToFetch={props.match.params.userid}/>) : (<Redirect to="/login"/>))}/>
         <Route exact path="/users" render={() => (localStorage.getItem('token') ? (<UsersContainer/>) : (<Redirect to="/login"/>))}/>
 

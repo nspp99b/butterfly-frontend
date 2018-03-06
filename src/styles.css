@@ -194,8 +194,6 @@ body {
 
 .flap-create {
   grid-area: flap-create;
-  border: 1px solid orangered;
-  border-radius: 10px;
   font-family: 'Roboto', sans-serif;
   text-align: center;
 }
