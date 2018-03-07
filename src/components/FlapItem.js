@@ -33,7 +33,7 @@ class FlapItem extends React.Component {
     return (
       <div className="flapItem">
         <div className="flapItem-left">
-          <img className="userProfile-img" src={this.props.flap.user.image} alt="" width="80px" height="80px"/>
+          <img className="flapItem-img" src={this.props.flap.user.image} alt="" width="80px" height="80px"/>
         </div>
         <div className="flapItem-right">
           <Link to={`/users/${this.props.flap.user.id}`}>{this.props.flap.user.name}</Link>
