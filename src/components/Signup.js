@@ -1,18 +1,24 @@
 import React from 'react';
-import { signupUser } from '../actions/signupUser';
+import { signupUser, editUser } from '../actions';
 import { connect } from 'react-redux';
 
 class Signup extends React.Component {
   state = {
-    name: '',
-    email: '',
+    name: this.props.currentUser.name,
+    email: this.props.currentUser.email,
+    image: this.props.currentUser.image,
     password: '',
     password_confirmation: ''
   }
 
   handleSignup = (e) => {
     e.preventDefault()
-    this.props.signupUser(this.state)
+    this.props.handleShowEdit()
+    if (this.props.currentUser) {
+      this.props.editUser(this.props.currentUser.id, this.state)
+    } else {
+      this.props.signupUser(this.state)
+    }
   }
 
   onInputChange = (e) => {
@@ -21,7 +27,17 @@ class Signup extends React.Component {
     })
   }
 
+  submitButtonValue = () => {
+    if (this.props.currentUser) {
+      return "Update"
+    } else {
+      return "Sign Up"
+    }
+  }
+
   render() {
+    console.log('Signup Component Rendered')
+    console.log(this.props)
     return (
       <form className="user-form" onSubmit={this.handleSignup}>
 
@@ -31,16 +47,19 @@ class Signup extends React.Component {
         <label>Email: </label> <br />
         <input value={this.state.email} name="email" type="text" onChange={this.onInputChange}></input> <br/>
 
+        <label>Image (full URL): </label> <br />
+        <input value={this.state.image} name="image" type="text" onChange={this.onInputChange}></input> <br/>
+
         <label>Password: </label> <br />
         <input value={this.state.password} name="password" type="password" onChange={this.onInputChange}></input> <br/>
 
         <label>Confirm password:</label> <br />
         <input value={this.state.password_confirmation} name="password_confirmation" type="password" onChange={this.onInputChange}></input> <br/>
 
-        <input className="submit-button" type="submit" value="Sign Up" />
+        <input className="submit-button" type="submit" value={this.submitButtonValue()} />
       </form>
     )
   }
 }
 
-export default connect(null, { signupUser })(Signup)
+export default connect(null, { signupUser, editUser })(Signup)

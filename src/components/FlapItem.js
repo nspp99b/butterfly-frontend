@@ -19,7 +19,7 @@ class FlapItem extends React.Component {
     this.setState({ imageSrc: "/butterfly_icon_white_25px.png"})
   }
 
-  handleFlapCreate = () => {
+  handleShowFlapCreate = () => {
     this.setState({ showFlapCreate: !this.state.showFlapCreate })
   }
 
@@ -46,8 +46,8 @@ class FlapItem extends React.Component {
           <div>{this.props.flap.content}</div>
           { this.props.flap.user.name !== "--" &&
           <div>
-            <img className="flapItem-img" src={this.state.imageSrc} alt="" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={this.handleFlapCreate}/>
-            { this.state.showFlapCreate === true && < FlapCreate currentUser={this.props.currentUser} parent={this.props.flap.id}/> }
+            <img className="flapItem-img" src={this.state.imageSrc} alt="" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onClick={this.handleShowFlapCreate}/>
+            { this.state.showFlapCreate === true && < FlapCreate currentUser={this.props.currentUser} handleShowFlapCreate={this.handleShowFlapCreate} parent={this.props.flap.id}/> }
           </div> }
           <div className="flapItem-fx" onClick={() => this.handleShowFlapEffects()}>FX: {this.props.flap.fx_count}</div>
 

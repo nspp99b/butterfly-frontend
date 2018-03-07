@@ -52,6 +52,14 @@ const getUser = (uid) => {
   }).then(res => res.json());
 }
 
+const patchUser = (uid, patchUserBody) => {
+  return fetch(`${API_ROOT}/users/${uid}`, {
+    method: 'PATCH',
+    headers: headers(),
+    body: JSON.stringify({ user: patchUserBody })
+  }).then(res => res.json());
+}
+
 //follows
 
 const postFollow = (follower_id, followed_id) => {
@@ -113,7 +121,8 @@ export default {
   },
   users: {
     getUsers,
-    getUser
+    getUser,
+    patchUser
   },
   follows: {
     postFollow,

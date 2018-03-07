@@ -10,6 +10,9 @@ class FlapCreate extends React.Component {
 
   handleFlapCreate = (e) => {
     e.preventDefault()
+    if (this.props.parent > 0) {
+      this.props.handleShowFlapCreate()
+    }
     this.props.addFlap(this.state.content, this.props.currentUser.id, this.props.parent)
     this.setState({
       content: ''

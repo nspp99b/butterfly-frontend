@@ -29,7 +29,7 @@ class UserProfile extends React.Component {
         </div>
         { this.state.showEdit === true && this.props.user.id === this.props.currentUser.id &&
           <div>
-            < Signup />
+            < Signup currentUser={this.props.currentUser} handleShowEdit={this.handleShowEdit}/>
           </div>
         }
       </div>
