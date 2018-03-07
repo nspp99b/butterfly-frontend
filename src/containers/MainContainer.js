@@ -17,7 +17,7 @@ class MainContainer extends React.Component {
     return (
       <div className="main-wrapper">
         <FlapCreate currentUser={this.props.currentUser} parent={null}/>
-        <UserContainer user={this.props.currentUser}/>
+        <UserContainer user={this.props.currentUser} currentUser={this.props.currentUser}/>
         <FlapListContainer />
       </div>
     )

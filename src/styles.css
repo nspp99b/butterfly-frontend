@@ -285,6 +285,16 @@ body {
   font-size: small;
 }
 
+.userProfile-edit {
+  font-family: 'Roboto', sans-serif;
+  font-size: small;
+}
+
+.userProfile-edit:hover {
+  color: orangered;
+  cursor: pointer;
+}
+
 /* flaps container */
 
 .flaps-container {
