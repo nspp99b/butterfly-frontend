@@ -13,7 +13,7 @@ class Signup extends React.Component {
 
   handleSignup = (e) => {
     e.preventDefault()
-    if (this.props.currentUser.id > 0) {
+    if (this.props.currentUser.id >= 1) {
       this.props.handleShowEdit()
       this.props.editUser(this.props.currentUser.id, this.state)
     } else {
@@ -28,7 +28,7 @@ class Signup extends React.Component {
   }
 
   submitButtonValue = () => {
-    if (this.props.currentUser) {
+    if (this.props.currentUser.id >= 1) {
       return "Update"
     } else {
       return "Sign Up"

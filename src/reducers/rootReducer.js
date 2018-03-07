@@ -20,7 +20,7 @@ function usersReducer(state = { currentUser: {id: 0, name: "", email: "", image:
 
     case 'LOGOUT_USER':
       localStorage.removeItem('token')
-      return { ...state, currentUser: null, isLoggedIn: false }
+      return { ...state, currentUser: {id: 0, name: "", email: "", image: "", following: [], followers: []}, isLoggedIn: false }
 
     case 'FETCH_USERS':
       return { ...state, users: action.payload }

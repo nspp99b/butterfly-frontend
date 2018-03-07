@@ -127,8 +127,8 @@ body {
   margin: auto;
   padding: 10px;
   text-align: center;
-  border: 1px solid orangered;
-  border-radius: 10px;
+  /* border: 1px solid orangered;
+  border-radius: 10px; */
   font-family: 'Roboto', sans-serif;
   font-size: 10pt;
   color: black;
@@ -154,6 +154,15 @@ body {
 
 .user-form input {
   margin: 5px;
+  padding: 10px;
+  border: 1px solid silver;
+  border-radius: 3px;
+  width: 200px;
+  font-size: medium;
+}
+
+.user-form input:hover {
+  border-color: orange;
 }
 
 .user-form button {
@@ -167,7 +176,6 @@ body {
 
 .user-form a:hover {
   color: orangered;
-
 }
 
 /* main container structure */
@@ -210,6 +218,10 @@ body {
   border-radius: 10px;
   border: 1px solid orange;
   font-size: 14px;
+}
+
+.flap-create-textarea:hover {
+  border: 1px solid black;
 }
 
 .flap-create-submit-button {
