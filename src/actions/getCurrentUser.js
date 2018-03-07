@@ -5,7 +5,8 @@ export function getCurrentUser() {
   console.log('getCurrentUser fired')
   return (dispatch) => {
     adapter.auth.getLoggedInUser().then(user => {
-      console.log(`getLoggedinUser succeeded: ${user} `)
+      console.log('getCurrentUser succeeded')
+      console.log(user)
       if (user) {
         dispatch(setCurrentUser({user}))
       } else {
