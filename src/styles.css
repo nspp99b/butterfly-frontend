@@ -316,7 +316,7 @@ body {
 
 .flapItem-left {
   display:table-cell;
-  vertical-align:middle;
+  vertical-align: top;
   width:100px;
 }
 
