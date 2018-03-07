@@ -13,8 +13,8 @@ class Signup extends React.Component {
 
   handleSignup = (e) => {
     e.preventDefault()
-    this.props.handleShowEdit()
-    if (this.props.currentUser) {
+    if (this.props.currentUser.id > 0) {
+      this.props.handleShowEdit()
       this.props.editUser(this.props.currentUser.id, this.state)
     } else {
       this.props.signupUser(this.state)
