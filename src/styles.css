@@ -297,6 +297,18 @@ body {
   font-size: small;
 }
 
+.userProfile-follow-counts a {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: small;
+  color: black;
+}
+
+.userProfile-follow-counts a:hover {
+  text-decoration: none;
+  color: orange;
+}
+
 .userProfile-edit {
   font-family: 'Roboto', sans-serif;
   font-size: small;

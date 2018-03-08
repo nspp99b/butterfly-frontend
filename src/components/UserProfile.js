@@ -1,6 +1,7 @@
 import React from 'react';
 import Signup from './Signup';
-import FollowButton from './FollowButton'
+import FollowButton from './FollowButton';
+import { Link } from 'react-router-dom';
 
 class UserProfile extends React.Component {
 
@@ -22,8 +23,8 @@ class UserProfile extends React.Component {
           <span>{this.props.user.name}</span>
             { this.props.currentUser && this.props.currentUser.id !== this.props.user.id && <FollowButton user={this.props.user} currentUser={this.props.currentUser} follow={this.props.follow} unfollow={this.props.unfollow}/>}
           <div className="userProfile-follow-counts">
-            <span>following: {this.props.user.following.length} | </span>
-            <span>followers: {this.props.user.followers.length}</span>
+            <span><Link to={`/users/${this.props.user.id}/following`}>following:</Link>  {this.props.user.following.length} | </span>
+            <span><Link to={`/users/${this.props.user.id}/followers`}>followers:</Link> {this.props.user.followers.length}</span>
           </div>
           {this.props.user.id === this.props.currentUser.id && <div className="userProfile-edit" onClick={this.handleShowEdit}>edit</div>}
         </div>
