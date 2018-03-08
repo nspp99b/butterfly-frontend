@@ -11,3 +11,5 @@ export { fetchUser } from './fetchUser';
 export { editUser } from './editUser';
 export { follow } from './follow';
 export { unfollow } from './unfollow';
+export { fetchFollowing } from './fetchFollowing';
+export { fetchFollowers } from './fetchFollowers';
