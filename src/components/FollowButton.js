@@ -1,7 +1,7 @@
 import React from 'react'
 
 const FollowButton = (props) => {
-  console.log('display Button fired')
+  console.log('FollowButton rendered')
   return (
     props.user.followers.includes(props.currentUser.id) ?
     <button className="userProfile-followbuttons" onClick={() => props.unfollow(props.currentUser.id, props.user.id)}>unfollow</button>
