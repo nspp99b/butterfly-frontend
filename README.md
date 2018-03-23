@@ -6,6 +6,8 @@ A social messaging platform that allows you to create status updates, or "flaps"
 
 Sign up, follow other users, create original flaps, or create flaps in response to other flaps in your feed.  Delete flaps without disrupting the causal chain-- have an insane time!
 
+[Demo](https://youtu.be/na1Eqad0zHw)
+
 ![main](screenshots/main.png "Butterfly Main")  
 
 ![profile](screenshots/profile.png "Butterfly Profile")  
