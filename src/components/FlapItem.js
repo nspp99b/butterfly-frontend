@@ -51,7 +51,7 @@ class FlapItem extends React.Component {
           </div> }
           <div className="flapItem-fx" onClick={() => this.handleShowFlapEffects()}>FX: {this.props.flap.fx_count}</div>
 
-          { this.state.showFlapEffects === true && < FlapList flaps={this.props.flap.effects} currentUser={this.props.currentUser}/> }
+          { this.state.showFlapEffects === true && < FlapList flaps={this.props.flap.effects} currentUser={this.props.currentUser} updateFlap={this.props.updateFlap}/> }
         </div>
       </div>
     )
