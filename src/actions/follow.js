@@ -7,8 +7,8 @@ export function follow(follower_id, followed_id) {
     .then(data => {
       console.log('postFollow succeeded')
       console.log(data)
-      dispatch({ type: 'FETCH_USER', payload: data.user })
-      dispatch({ type: 'REFRESH_CURRENT_USER', payload: data.currentUser })
+      dispatch({ type: 'FETCH_USER', payload: data.followed })
+      dispatch({ type: 'REFRESH_CURRENT_USER', payload: data.follower })
     })
   }
 }
