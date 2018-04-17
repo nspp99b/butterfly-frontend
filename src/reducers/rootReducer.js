@@ -40,10 +40,7 @@ function flapsReducer(state = { flaps: [] }, action) {
  	    return { flaps: action.payload }
 
     case 'UPDATE_FLAP':
-      let idx = state.flaps.findIndex(f => f.id === action.payload.id)
-      let front = state.flaps.slice(0,idx)
-      let back = state.flaps.slice(idx+1)
-      return { flaps: [...front, action.payload, ...back] }
+      return { flaps: action.payload }
 
     default:
       return state;

@@ -35,7 +35,7 @@ class App extends React.Component {
         <Route exact path="/main" render={() => (localStorage.getItem('token') ? (<MainContainer currentUser={this.props.currentUser}/>) : (<Redirect to="/login"/>))}/>
         <Route exact path="/profile" render={(props) => (localStorage.getItem('token') ? (<ProfileContainer userToFetch={this.props.currentUser.id}/>) : (<Redirect to="/login"/>))}/>
         <Route exact path="/users/:userid/following" render={(props) => (localStorage.getItem('token') ? (<FollowingContainer userToFetch={props.match.params.userid}/>) : (<Redirect to="/login"/>))}/>
-        <Route exact path="/users/:userid/followers/" render={(props) => (localStorage.getItem('token') ? (<FollowersContainer userToFetch={props.match.params.userid}/>) : (<Redirect to="/login"/>))}/>
+        <Route exact path="/users/:userid/followers" render={(props) => (localStorage.getItem('token') ? (<FollowersContainer userToFetch={props.match.params.userid}/>) : (<Redirect to="/login"/>))}/>
         <Route exact path="/users/:userid" render={(props) => (localStorage.getItem('token') ? (<ProfileContainer userToFetch={props.match.params.userid}/>) : (<Redirect to="/login"/>))}/>
         <Route exact path="/users" render={() => (localStorage.getItem('token') ? (<UsersContainer/>) : (<Redirect to="/login"/>))}/>
         </Switch>

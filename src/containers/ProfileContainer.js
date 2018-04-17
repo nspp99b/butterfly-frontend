@@ -8,8 +8,13 @@ import FlapCreate from '../components/FlapCreate';
 
 class ProfileContainer extends React.Component {
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.userToFetch !== nextProps.userToFetch) {
+      this.props.fetchUser(nextProps.userToFetch)
+    }
+  }
+
   componentDidMount() {
-    console.log('PROFILECONTAINER DID MOUNT')
     this.props.fetchUser(this.props.userToFetch)
   }
 

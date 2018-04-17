@@ -12,7 +12,7 @@ const Navbar = (props) => {
       { loggedIn ?
         <ul>
           <li className="nav-bar-logout" onClick={props.logout}>Logout</li>
-          <li><Link to='/profile'>{props.currentUser.name}</Link></li>
+          <li><Link to={'/users/' + props.currentUser.id}>{props.currentUser.name}</Link></li>
           <li><Link to='/users'>Users</Link></li>
           <li><Link to='/main'>Main</Link></li>
         </ul>
