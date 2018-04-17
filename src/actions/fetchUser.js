@@ -7,8 +7,10 @@ export function fetchUser(uid) {
     .then(data => {
       console.log('fetchUser succeeded')
       console.log(data)
-      if (data.user) {
-        dispatch({ type: 'FETCH_USER', payload: data.user })
+      let u = Object.assign({}, data)
+      delete u.flaps
+      if (u) {
+        dispatch({ type: 'FETCH_USER', payload: u })
         dispatch({ type: 'FETCH_FLAPS', payload: data.flaps})
       }
     })
