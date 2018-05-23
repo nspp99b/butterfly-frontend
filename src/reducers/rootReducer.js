@@ -29,7 +29,7 @@ function usersReducer(state = {
 
     case 'LOGOUT_USER':
       localStorage.removeItem('token')
-      return { ...state, currentUser: {id: 0, name: "", email: "", image: "", following: [], followers: [] }, isLoggedIn: false};
+      return { ...state, currentUser: {id: 0, name: "", email: "", image: "", following: [], followers: [] }, isLoggedIn: false };
 
     case 'FETCH_USERS':
       return { ...state, users: action.payload };
@@ -39,7 +39,7 @@ function usersReducer(state = {
 
     default:
       return state;
-  };
+  }
 };
 
 function flapsReducer(state = { flaps: [] }, action) {
