@@ -1,4 +1,4 @@
-//constants
+// constants
 
 const headers = () => {
   return {'Content-Type': 'application/json',
@@ -14,7 +14,7 @@ const signup_headers = {
 const URL_ROOT = 'http://localhost:3001'
 const API_ROOT = `${URL_ROOT}/api/v1`
 
-//auth fetches
+// auth fetches
 
 const signup = (signupBody) => {
   return fetch(`${URL_ROOT}/signup`, {
@@ -38,7 +38,7 @@ const getLoggedInUser = () => {
   }).then(res => res.json())
 }
 
-//users
+// users
 
 const getUsers = () => {
   return fetch(`${API_ROOT}/users`, {
@@ -60,7 +60,7 @@ const patchUser = (uid, patchUserBody) => {
   }).then(res => res.json());
 }
 
-//follows
+// follows
 
 const postFollow = (follower_id, followed_id) => {
   return fetch(`${API_ROOT}/connections`, {
@@ -90,7 +90,7 @@ const getFollowers = (uid) => {
   }).then(res => res.json());
 }
 
-//flaps
+// flaps
 
 const getFlaps = () => {
   return fetch(`${API_ROOT}/flaps`, {
