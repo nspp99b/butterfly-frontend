@@ -7,6 +7,8 @@ import FlapCreate from '../components/FlapCreate';
 
 class UsersContainer extends React.Component {
 
+  // get users on mount
+
   componentDidMount() {
     this.props.fetchUsers()
   }
@@ -20,15 +22,15 @@ class UsersContainer extends React.Component {
         <UserContainer user={this.props.currentUser} currentUser={this.props.currentUser}/>
         <UserListContainer />
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 const mapStateToProps = (state) => {
   return {
     currentUser: state.usersReducer.currentUser,
     isLoggedIn: state.usersReducer.isLoggedIn,
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps, actions)(UsersContainer)
+export default connect(mapStateToProps, actions)(UsersContainer);

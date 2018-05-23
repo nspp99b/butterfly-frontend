@@ -23,7 +23,7 @@ class App extends React.Component {
       this.props.getCurrentUser();
     } else {
       console.log('No token found');
-    }
+    };
   };
 
   render() {
@@ -50,7 +50,7 @@ const mapStateToProps = (state) => {
   return {
     currentUser: state.usersReducer.currentUser,
     isLoggedIn: state.usersReducer.isLoggedIn,
-  }
+  };
 };
 
 export default withRouter(connect(mapStateToProps, actions)(App));

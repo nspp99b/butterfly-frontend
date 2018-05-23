@@ -7,28 +7,30 @@ import FlapCreate from '../components/FlapCreate';
 
 class MainContainer extends React.Component {
 
+  // get flaps on mount
+
   componentDidMount() {
-    this.props.fetchFlaps()
-  }
+    this.props.fetchFlaps();
+  };
 
   render() {
-    console.log('MainContainer rendered')
-    console.log(this.props)
+    console.log('MainContainer rendered');
+    console.log(this.props);
     return (
       <div className="main-wrapper">
         <FlapCreate currentUser={this.props.currentUser} parent={null}/>
         <UserContainer user={this.props.currentUser} currentUser={this.props.currentUser}/>
         <FlapListContainer />
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 const mapStateToProps = (state) => {
   return {
     currentUser: state.usersReducer.currentUser,
     isLoggedIn: state.usersReducer.isLoggedIn,
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps, actions)(MainContainer)
+export default connect(mapStateToProps, actions)(MainContainer);

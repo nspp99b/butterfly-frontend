@@ -8,9 +8,11 @@ import FlapCreate from '../components/FlapCreate';
 
 class FollowingContainer extends React.Component {
 
+  // get following state on mount
+
   componentDidMount() {
-    this.props.fetchFollowing(this.props.userToFetch)
-  }
+    this.props.fetchFollowing(this.props.userToFetch);
+  };
 
   render() {
     console.log('FollowingContainer rendered')
@@ -21,15 +23,15 @@ class FollowingContainer extends React.Component {
         <UserContainer user={this.props.currentUser} currentUser={this.props.currentUser}/>
         <UserListContainer />
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 const mapStateToProps = (state) => {
   return {
     currentUser: state.usersReducer.currentUser,
     isLoggedIn: state.usersReducer.isLoggedIn,
-  }
-}
+  };
+};
 
-export default withRouter(connect(mapStateToProps, actions)(FollowingContainer))
+export default withRouter(connect(mapStateToProps, actions)(FollowingContainer));
