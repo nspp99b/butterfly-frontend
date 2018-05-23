@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import FollowButton from './FollowButton'
 
 const UserItem = (props) => {
   return (
@@ -15,11 +14,7 @@ const UserItem = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default UserItem
-
-// { props.user.id !== props.currentUser.id &&
-//   <FollowButton user={props.user} currentUser={props.currentUser} follow={props.follow} unfollow={props.unfollow}/>
-// }
+export default UserItem;

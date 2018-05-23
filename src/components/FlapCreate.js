@@ -6,7 +6,7 @@ class FlapCreate extends React.Component {
 
   state = {
     content: ''
-  }
+  };
 
   handleFlapCreate = (e) => {
     e.preventDefault();
@@ -31,6 +31,7 @@ class FlapCreate extends React.Component {
   render() {
     console.log('FlapCreate rendered');
     console.log(this.props);
+    
     return (
       <form className="flap-create" onSubmit={this.handleFlapCreate}>
         <textarea className="flap-create-textarea" placeholder="what did you do now..." value={this.state.content} name="content" onChange={this.onInputChange}></textarea>

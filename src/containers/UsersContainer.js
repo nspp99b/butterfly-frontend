@@ -10,12 +10,13 @@ class UsersContainer extends React.Component {
   // get users on mount
 
   componentDidMount() {
-    this.props.fetchUsers()
-  }
+    this.props.fetchUsers();
+  };
 
   render() {
-    console.log('UsersContainer rendered')
-    console.log(this.props)
+    console.log('UsersContainer rendered');
+    console.log(this.props);
+    
     return (
       <div className="main-wrapper">
         <FlapCreate currentUser={this.props.currentUser} parent={null}/>

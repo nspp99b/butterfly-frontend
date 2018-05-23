@@ -9,35 +9,36 @@ class Signup extends React.Component {
     image: this.props.currentUser.image,
     password: '',
     password_confirmation: ''
-  }
+  };
 
   handleSignup = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (this.props.currentUser.id >= 1) {
-      this.props.handleShowEdit()
-      this.props.editUser(this.props.currentUser.id, this.state)
+      this.props.handleShowEdit();
+      this.props.editUser(this.props.currentUser.id, this.state);
     } else {
-      this.props.signupUser(this.state)
-    }
-  }
+      this.props.signupUser(this.state);
+    };
+  };
 
   onInputChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
-    })
-  }
+    });
+  };
 
   submitButtonValue = () => {
     if (this.props.currentUser.id >= 1) {
-      return "Update"
+      return "Update";
     } else {
-      return "Sign Up"
-    }
-  }
+      return "Sign Up";
+    };
+  };
 
   render() {
-    console.log('Signup Component Rendered')
-    console.log(this.props)
+    console.log('Signup Component Rendered');
+    console.log(this.props);
+    
     return (
       <form className="user-form" onSubmit={this.handleSignup}>
 
@@ -58,8 +59,8 @@ class Signup extends React.Component {
 
         <input className="submit-button" type="submit" value={this.submitButtonValue()} />
       </form>
-    )
-  }
-}
+    );
+  };
+};
 
-export default connect(null, { signupUser, editUser })(Signup)
+export default connect(null, { signupUser, editUser })(Signup);

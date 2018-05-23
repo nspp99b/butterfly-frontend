@@ -7,15 +7,16 @@ class UserProfile extends React.Component {
 
   state = {
     showEdit: false
-  }
+  };
 
   handleShowEdit = () => {
     this.setState({ showEdit: !this.state.showEdit })
-  }
+  };
 
   render() {
-    console.log('UserProfile rendered')
-    console.log(this.props)
+    console.log('UserProfile rendered');
+    console.log(this.props);
+    
     return (
       <div className="userProfile">
         <img className="userProfile-img" src={this.props.user.image} alt="" />
@@ -34,9 +35,8 @@ class UserProfile extends React.Component {
           </div>
         }
       </div>
-    )
-  }
+    );
+  };
+};
 
-}
-
-export default UserProfile
+export default UserProfile;

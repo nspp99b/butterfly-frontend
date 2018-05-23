@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
 
-  const loggedIn = localStorage.getItem('token')
+  // check logged in status to conditionally render nav links
+
+  const loggedIn = localStorage.getItem('token');
 
   return (
     <nav className="nav-bar">

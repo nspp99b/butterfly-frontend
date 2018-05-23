@@ -28,6 +28,7 @@ class App extends React.Component {
 
   render() {
     console.log('app rendered');
+    
     return (
       <div className="app-wrapper">
         <NavBar currentUser={this.props.currentUser} logout={this.props.logoutUser}/>

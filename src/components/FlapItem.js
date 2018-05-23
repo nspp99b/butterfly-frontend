@@ -9,27 +9,28 @@ class FlapItem extends React.Component {
     imageSrc: "/butterfly_icon_white_25px.png",
     showFlapCreate: false,
     showFlapEffects: false
-  }
+  };
 
   handleMouseEnter = () => {
-    this.setState({ imageSrc: "/butterfly_icon_purple_25px.png"})
-  }
+    this.setState({ imageSrc: "/butterfly_icon_purple_25px.png"});
+  };
 
   handleMouseLeave = () => {
-    this.setState({ imageSrc: "/butterfly_icon_white_25px.png"})
-  }
+    this.setState({ imageSrc: "/butterfly_icon_white_25px.png"});
+  };
 
   handleShowFlapCreate = () => {
-    this.setState({ showFlapCreate: !this.state.showFlapCreate })
-  }
+    this.setState({ showFlapCreate: !this.state.showFlapCreate });
+  };
 
   handleShowFlapEffects = () => {
-    this.setState({ showFlapEffects: !this.state.showFlapEffects })
-  }
+    this.setState({ showFlapEffects: !this.state.showFlapEffects });
+  };
 
   render() {
-    console.log('FlapItem rendered')
-    console.log(this.props)
+    console.log('FlapItem rendered');
+    console.log(this.props);
+    
     return (
       <div className="flapItem">
         <div className="flapItem-left">
@@ -54,8 +55,8 @@ class FlapItem extends React.Component {
           { this.state.showFlapEffects === true && < FlapList flaps={this.props.flap.effects} currentUser={this.props.currentUser} updateFlap={this.props.updateFlap}/> }
         </div>
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
-export default FlapItem
+export default FlapItem;
